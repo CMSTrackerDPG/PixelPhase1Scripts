@@ -1,0 +1,91 @@
+.tooltip_bg{
+  fill: white;
+  stroke: black;
+  stroke-width: 1;
+  stroke-dasharray: 1;
+  opacity: 0.85;
+  
+  width: 400;
+  height: 80;
+
+  filter:drop-shadow(4px 6px 4px #AAA);
+}
+
+.myGrid{
+  padding-top: 5px;
+  width: 300px;
+  visibility: inherit;
+}
+
+.myGrid .myGridCellTh{
+  width: 150px;
+  height: 1.25em;
+  float: left;
+  font-weight: bold;
+}
+
+.myGrid .myGridCell{
+  width: 100px;
+  height: 1.25em;
+  float: left;
+}
+
+body{
+  font-size: small;
+}
+
+.infoTable{
+  width: 300px;
+  height: 4em;
+}
+
+.barrelPoly{
+  stroke: rgb(128, 128, 128);
+  stroke-width: 0.1;
+}
+
+.forwardPoly{
+  stroke: rgb(255, 192, 0);
+  stroke-width: 0.1;
+}
+
+polygon{
+  transition-property: fill-opacity, stroke-width;
+  transition-duration: 0.35s;
+  transition-timing-function: ease-in-out;
+}
+
+polygon:hover{
+  fill-opacity: 0.2;
+  cursor: pointer;
+  stroke-width: 0.3;
+}
+
+
+#moduleName{
+  font-weight: bolder;
+}
+
+body{
+  width: 400px;
+}
+
+svg{
+  width: 2000px;
+  height: 800px;
+}
+
+svg#mainMap{
+  background-color: rgb(255, 255, 255);
+  transform: translate(0px, 0px);
+}
+
+#barrelPolygonGroup{
+  transform: translate(50px, 400px);
+}
+#mForwardPolygonGroup{
+  transform: translate(150px, 0px)
+}
+#pForwardPolygonGroup{
+  transform: translate(150px, 0px);
+}

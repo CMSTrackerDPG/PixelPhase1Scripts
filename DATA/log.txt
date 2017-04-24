@@ -1,0 +1,700 @@
+1322:
+		{'FED receiver': 't', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '15/16', 'detId': '344565764', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '9/10', 'detId': '344470532', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '1/2', 'detId': '344208388', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '43/44', 'detId': '344823812', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '11/12', 'detId': '344471556', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '29/30', 'detId': '344294404', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '21/22', 'detId': '344826884', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '25/26', 'detId': '344298500', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '17/18', 'detId': '344732676', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '5/6', 'detId': '344302596', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '3/4', 'detId': '344209412', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '13/14', 'detId': '344564740', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '35/36', 'detId': '344561668', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '7/8', 'detId': '344303620', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '23/24', 'detId': '344827908', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '37/38', 'detId': '344556548', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '47/48', 'detId': '344819716', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '45/46', 'detId': '344818692', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '33/34', 'detId': '344560644', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '41/42', 'detId': '344822788', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '19/20', 'detId': '344733700', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '27/28', 'detId': '344299524', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '39/40', 'detId': '344557572', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1322', 'FEC FED crate': 'down center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '31/32', 'detId': '344295428', 'channel': '0x10', 'FEC ID': ''}
+1323:
+		{'FED receiver': 't', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '15/16', 'detId': '344553476', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '9/10', 'detId': '344466436', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '43/44', 'detId': '344950788', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '1/2', 'detId': '344204292', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '47/48', 'detId': '344725508', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '11/12', 'detId': '344467460', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '29/30', 'detId': '344200196', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '21/22', 'detId': '344814596', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '25/26', 'detId': '344425476', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '3/4', 'detId': '344205316', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '5/6', 'detId': '344290308', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '13/14', 'detId': '344552452', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '35/36', 'detId': '344688644', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '7/8', 'detId': '344291332', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '23/24', 'detId': '344815620', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '37/38', 'detId': '344462340', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '45/46', 'detId': '344724484', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '31/32', 'detId': '344201220', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '33/34', 'detId': '344687620', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '41/42', 'detId': '344949764', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '19/20', 'detId': '344729604', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '27/28', 'detId': '344426500', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '39/40', 'detId': '344463364', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1323', 'FEC FED crate': 'down center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '17/18', 'detId': '344728580', 'channel': '0x12', 'FEC ID': ''}
+1320:
+		{'FED receiver': 'b', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '41/42', 'detId': '344843268', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '15/16', 'detId': '344483844', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '9/10', 'detId': '344585220', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '43/44', 'detId': '344844292', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '1/2', 'detId': '344323076', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '47/48', 'detId': '344741892', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '11/12', 'detId': '344586244', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '29/30', 'detId': '344216580', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '13/14', 'detId': '344482820', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '21/22', 'detId': '344744964', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '3/4', 'detId': '344324100', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '7/8', 'detId': '344221700', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '35/36', 'detId': '344582148', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '5/6', 'detId': '344220676', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '23/24', 'detId': '344745988', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '37/38', 'detId': '344478724', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '17/18', 'detId': '344847364', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '45/46', 'detId': '344740868', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '33/34', 'detId': '344581124', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '25/26', 'detId': '344318980', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '19/20', 'detId': '344848388', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '27/28', 'detId': '344320004', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '39/40', 'detId': '344479748', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1320', 'FEC FED crate': 'down center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '31/32', 'detId': '344217604', 'channel': '0x10', 'FEC ID': ''}
+1321:
+		{'FED receiver': 'b', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '41/42', 'detId': '344835076', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '15/16', 'detId': '344475652', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '9/10', 'detId': '344577028', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '1/2', 'detId': '344314884', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '43/44', 'detId': '344836100', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '11/12', 'detId': '344578052', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '29/30', 'detId': '344306692', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '21/22', 'detId': '344736772', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '31/32', 'detId': '344307716', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '5/6', 'detId': '344212484', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '3/4', 'detId': '344315908', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '13/14', 'detId': '344474628', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '35/36', 'detId': '344573956', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '7/8', 'detId': '344213508', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '23/24', 'detId': '344737796', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '37/38', 'detId': '344568836', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '17/18', 'detId': '344839172', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '47/48', 'detId': '344832004', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '45/46', 'detId': '344830980', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '33/34', 'detId': '344572932', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '25/26', 'detId': '344310788', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '19/20', 'detId': '344840196', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '39/40', 'detId': '344569860', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1321', 'FEC FED crate': 'down center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '27/28', 'detId': '344311812', 'channel': '0x10', 'FEC ID': ''}
+1326:
+		{'FED receiver': 't', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '15/16', 'detId': '344664068', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '9/10', 'detId': '344536068', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '1/2', 'detId': '344273924', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '43/44', 'detId': '344795140', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '11/12', 'detId': '344537092', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '29/30', 'detId': '344396804', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '21/22', 'detId': '344925188', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '13/14', 'detId': '344663044', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '41/42', 'detId': '344794116', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '31/32', 'detId': '344397828', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '3/4', 'detId': '344274948', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '5/6', 'detId': '344400900', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '35/36', 'detId': '344532996', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '47/48', 'detId': '344922116', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '23/24', 'detId': '344926212', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '37/38', 'detId': '344658948', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '7/8', 'detId': '344401924', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '45/46', 'detId': '344921092', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '33/34', 'detId': '344531972', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '25/26', 'detId': '344269828', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '19/20', 'detId': '344799236', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '27/28', 'detId': '344270852', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '39/40', 'detId': '344659972', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1326', 'FEC FED crate': 'down center', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '17/18', 'detId': '344798212', 'channel': '0x12', 'FEC ID': ''}
+1338:
+		{'FED receiver': 'b', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '41/42', 'detId': '344916996', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '15/16', 'detId': '344524804', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '21/22', 'detId': '344785924', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '1/2', 'detId': '344388612', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '47/48', 'detId': '344791044', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '11/12', 'detId': '344651780', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '29/30', 'detId': '344265732', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '13/14', 'detId': '344523780', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '9/10', 'detId': '344650756', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '3/4', 'detId': '344389636', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '7/8', 'detId': '344262660', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '35/36', 'detId': '344655876', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '5/6', 'detId': '344261636', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '23/24', 'detId': '344786948', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '37/38', 'detId': '344527876', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '17/18', 'detId': '344912900', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '43/44', 'detId': '344918020', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '45/46', 'detId': '344790020', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '33/34', 'detId': '344654852', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '25/26', 'detId': '344392708', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '19/20', 'detId': '344913924', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '27/28', 'detId': '344393732', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '39/40', 'detId': '344528900', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1338', 'FEC FED crate': 'bottom', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '31/32', 'detId': '344266756', 'channel': '0x10', 'FEC ID': ''}
+1324:
+		{'FED receiver': 'b', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '41/42', 'detId': '344941572', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '15/16', 'detId': '344549380', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '9/10', 'detId': '344683524', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '43/44', 'detId': '344942596', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '1/2', 'detId': '344421380', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '47/48', 'detId': '344807428', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '11/12', 'detId': '344684548', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '29/30', 'detId': '344282116', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '13/14', 'detId': '344548356', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '21/22', 'detId': '344810500', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '3/4', 'detId': '344422404', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '7/8', 'detId': '344287236', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '35/36', 'detId': '344680452', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '5/6', 'detId': '344286212', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '23/24', 'detId': '344811524', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '37/38', 'detId': '344544260', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '17/18', 'detId': '344945668', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '45/46', 'detId': '344806404', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '33/34', 'detId': '344679428', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '25/26', 'detId': '344417284', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '19/20', 'detId': '344946692', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '27/28', 'detId': '344418308', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '39/40', 'detId': '344545284', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1324', 'FEC FED crate': 'down center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '31/32', 'detId': '344283140', 'channel': '0x10', 'FEC ID': ''}
+1325:
+		{'FED receiver': 't', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '15/16', 'detId': '344672260', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '9/10', 'detId': '344675332', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '1/2', 'detId': '344413188', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '43/44', 'detId': '344803332', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '11/12', 'detId': '344676356', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '29/30', 'detId': '344404996', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '21/22', 'detId': '344933380', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '13/14', 'detId': '344671236', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '41/42', 'detId': '344802308', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '31/32', 'detId': '344406020', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '5/6', 'detId': '344409092', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '35/36', 'detId': '344541188', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '23/24', 'detId': '344934404', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '37/38', 'detId': '344667140', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '17/18', 'detId': '344937476', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '47/48', 'detId': '344930308', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '45/46', 'detId': '344929284', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '7/8', 'detId': '344410116', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '33/34', 'detId': '344540164', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '25/26', 'detId': '344278020', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '19/20', 'detId': '344938500', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '27/28', 'detId': '344279044', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '39/40', 'detId': '344668164', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1325', 'FEC FED crate': 'down center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '3/4', 'detId': '344414212', 'channel': '0x10', 'FEC ID': ''}
+1335:
+		{'FED receiver': 't', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '15/16', 'detId': '344508420', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '9/10', 'detId': '344617988', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '1/2', 'detId': '344355844', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '47/48', 'detId': '344885252', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '11/12', 'detId': '344619012', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '29/30', 'detId': '344359940', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '21/22', 'detId': '344769540', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '13/14', 'detId': '344507396', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '41/42', 'detId': '344773636', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '31/32', 'detId': '344360964', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '5/6', 'detId': '344245252', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '35/36', 'detId': '344512516', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '7/8', 'detId': '344246276', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '23/24', 'detId': '344770564', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '37/38', 'detId': '344622084', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '17/18', 'detId': '344880132', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '43/44', 'detId': '344774660', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '45/46', 'detId': '344884228', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '33/34', 'detId': '344511492', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '25/26', 'detId': '344249348', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '19/20', 'detId': '344881156', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '27/28', 'detId': '344250372', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '39/40', 'detId': '344623108', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1335', 'FEC FED crate': 'bottom', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '3/4', 'detId': '344356868', 'channel': '0x10', 'FEC ID': ''}
+1334:
+		{'FED receiver': 'b', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '41/42', 'detId': '344876036', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '15/16', 'detId': '344500228', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '21/22', 'detId': '344761348', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '1/2', 'detId': '344347652', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '47/48', 'detId': '344766468', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '11/12', 'detId': '344610820', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '29/30', 'detId': '344241156', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '13/14', 'detId': '344499204', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '9/10', 'detId': '344609796', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '3/4', 'detId': '344348676', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '7/8', 'detId': '344238084', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '35/36', 'detId': '344614916', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '5/6', 'detId': '344237060', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '23/24', 'detId': '344762372', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '37/38', 'detId': '344503300', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '17/18', 'detId': '344871940', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '43/44', 'detId': '344877060', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '45/46', 'detId': '344765444', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '33/34', 'detId': '344613892', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '25/26', 'detId': '344351748', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '19/20', 'detId': '344872964', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '27/28', 'detId': '344352772', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '39/40', 'detId': '344504324', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1334', 'FEC FED crate': 'bottom', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '31/32', 'detId': '344242180', 'channel': '0x10', 'FEC ID': ''}
+1337:
+		{'FED receiver': 't', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '15/16', 'detId': '344639492', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '9/10', 'detId': '344642564', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '1/2', 'detId': '344380420', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '43/44', 'detId': '344909828', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '11/12', 'detId': '344643588', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '29/30', 'detId': '344257540', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '21/22', 'detId': '344900612', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '13/14', 'detId': '344638468', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '25/26', 'detId': '344384516', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '31/32', 'detId': '344258564', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '5/6', 'detId': '344376324', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '7/8', 'detId': '344377348', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '33/34', 'detId': '344646660', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '35/36', 'detId': '344647684', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '23/24', 'detId': '344901636', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '37/38', 'detId': '344519684', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '17/18', 'detId': '344904708', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '47/48', 'detId': '344782852', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '45/46', 'detId': '344781828', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '41/42', 'detId': '344908804', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '19/20', 'detId': '344905732', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '27/28', 'detId': '344385540', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '39/40', 'detId': '344520708', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1337', 'FEC FED crate': 'bottom', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '3/4', 'detId': '344381444', 'channel': '0x10', 'FEC ID': ''}
+1336:
+		{'FED receiver': 't', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '15/16', 'detId': '344627204', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '9/10', 'detId': '344630276', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '1/2', 'detId': '344368132', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '43/44', 'detId': '344778756', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '11/12', 'detId': '344631300', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '29/30', 'detId': '344372228', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '21/22', 'detId': '344888324', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '13/14', 'detId': '344626180', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '41/42', 'detId': '344777732', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '31/32', 'detId': '344373252', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '5/6', 'detId': '344364036', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '35/36', 'detId': '344516612', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '23/24', 'detId': '344889348', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '37/38', 'detId': '344634372', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '17/18', 'detId': '344892420', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '47/48', 'detId': '344897540', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '45/46', 'detId': '344896516', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '7/8', 'detId': '344365060', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '33/34', 'detId': '344515588', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '25/26', 'detId': '344253444', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '19/20', 'detId': '344893444', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '27/28', 'detId': '344254468', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '39/40', 'detId': '344635396', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1336', 'FEC FED crate': 'bottom', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '3/4', 'detId': '344369156', 'channel': '0x10', 'FEC ID': ''}
+1308:
+		{'FED receiver': 'b', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '41/42', 'detId': '353244164', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '15/16', 'detId': '352876548', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '9/10', 'detId': '352977924', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '43/44', 'detId': '353245188', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '1/2', 'detId': '352715780', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '47/48', 'detId': '353142788', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '11/12', 'detId': '352978948', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '29/30', 'detId': '352617476', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '13/14', 'detId': '352875524', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '21/22', 'detId': '353137668', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '3/4', 'detId': '352716804', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '7/8', 'detId': '352614404', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '35/36', 'detId': '352983044', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '5/6', 'detId': '352613380', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '23/24', 'detId': '353138692', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '37/38', 'detId': '352879620', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '17/18', 'detId': '353240068', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '45/46', 'detId': '353141764', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '33/34', 'detId': '352982020', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '25/26', 'detId': '352719876', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '19/20', 'detId': '353241092', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '27/28', 'detId': '352720900', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '39/40', 'detId': '352880644', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1308', 'FEC FED crate': 'up center', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '31/32', 'detId': '352618500', 'channel': '0x10', 'FEC ID': ''}
+1309:
+		{'FED receiver': 'b', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '41/42', 'detId': '353252356', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '15/16', 'detId': '352884740', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '9/10', 'detId': '352986116', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '1/2', 'detId': '352723972', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '43/44', 'detId': '353253380', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '11/12', 'detId': '352987140', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '29/30', 'detId': '352732164', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '21/22', 'detId': '353145860', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '31/32', 'detId': '352733188', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '5/6', 'detId': '352621572', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '3/4', 'detId': '352724996', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '13/14', 'detId': '352883716', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '35/36', 'detId': '352991236', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '7/8', 'detId': '352622596', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '23/24', 'detId': '353146884', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '37/38', 'detId': '352994308', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '17/18', 'detId': '353248260', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '47/48', 'detId': '353257476', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '45/46', 'detId': '353256452', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '33/34', 'detId': '352990212', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '25/26', 'detId': '352728068', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '19/20', 'detId': '353249284', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '39/40', 'detId': '352995332', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1309', 'FEC FED crate': 'up center', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '27/28', 'detId': '352729092', 'channel': '0x10', 'FEC ID': ''}
+1333:
+		{'FED receiver': 't', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '15/16', 'detId': '344598532', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '9/10', 'detId': '344495108', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '1/2', 'detId': '344232964', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '43/44', 'detId': '344868868', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '11/12', 'detId': '344496132', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '29/30', 'detId': '344339460', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '21/22', 'detId': '344859652', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '13/14', 'detId': '344597508', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '25/26', 'detId': '344343556', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '31/32', 'detId': '344340484', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '5/6', 'detId': '344335364', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '3/4', 'detId': '344233988', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '7/8', 'detId': '344336388', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '35/36', 'detId': '344606724', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '23/24', 'detId': '344860676', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '37/38', 'detId': '344601604', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '47/48', 'detId': '344864772', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '45/46', 'detId': '344863748', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '33/34', 'detId': '344605700', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '41/42', 'detId': '344867844', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '19/20', 'detId': '344758276', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '27/28', 'detId': '344344580', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '39/40', 'detId': '344602628', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1333', 'FEC FED crate': 'bottom', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '17/18', 'detId': '344757252', 'channel': '0x12', 'FEC ID': ''}
+1332:
+		{'FED receiver': 't', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '15/16', 'detId': '344590340', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '9/10', 'detId': '344486916', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '1/2', 'detId': '344224772', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '43/44', 'detId': '344754180', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '11/12', 'detId': '344487940', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '29/30', 'detId': '344331268', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '21/22', 'detId': '344851460', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '13/14', 'detId': '344589316', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '41/42', 'detId': '344753156', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '31/32', 'detId': '344332292', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '3/4', 'detId': '344225796', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '5/6', 'detId': '344327172', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '35/36', 'detId': '344492036', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '7/8', 'detId': '344328196', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '23/24', 'detId': '344852484', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '37/38', 'detId': '344593412', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '47/48', 'detId': '344856580', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '45/46', 'detId': '344855556', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '33/34', 'detId': '344491012', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '25/26', 'detId': '344228868', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '19/20', 'detId': '344750084', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '27/28', 'detId': '344229892', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '39/40', 'detId': '344594436', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1332', 'FEC FED crate': 'bottom', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '17/18', 'detId': '344749060', 'channel': '0x12', 'FEC ID': ''}
+1314:
+		{'FED receiver': 't', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '15/16', 'detId': '353040388', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '9/10', 'detId': '352912388', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '1/2', 'detId': '352650244', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '43/44', 'detId': '353179652', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '11/12', 'detId': '352913412', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '29/30', 'detId': '352781316', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '21/22', 'detId': '353301508', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '13/14', 'detId': '353039364', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '41/42', 'detId': '353178628', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '31/32', 'detId': '352782340', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '3/4', 'detId': '352651268', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '5/6', 'detId': '352777220', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '35/36', 'detId': '352917508', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '47/48', 'detId': '353306628', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '23/24', 'detId': '353302532', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '37/38', 'detId': '353043460', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '7/8', 'detId': '352778244', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '45/46', 'detId': '353305604', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '33/34', 'detId': '352916484', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '25/26', 'detId': '352654340', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '19/20', 'detId': '353175556', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '27/28', 'detId': '352655364', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '39/40', 'detId': '353044484', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1314', 'FEC FED crate': 'up center', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '17/18', 'detId': '353174532', 'channel': '0x12', 'FEC ID': ''}
+1300:
+		{'FED receiver': 't', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '15/16', 'detId': '353077252', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '9/10', 'detId': '353072132', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '1/2', 'detId': '352809988', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '43/44', 'detId': '353196036', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '11/12', 'detId': '353073156', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '29/30', 'detId': '352805892', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '21/22', 'detId': '353338372', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '13/14', 'detId': '353076228', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '41/42', 'detId': '353195012', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '31/32', 'detId': '352806916', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '5/6', 'detId': '352814084', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '35/36', 'detId': '352933892', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '23/24', 'detId': '353339396', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '37/38', 'detId': '353068036', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '17/18', 'detId': '353334276', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '47/48', 'detId': '353331204', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '45/46', 'detId': '353330180', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '7/8', 'detId': '352815108', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '33/34', 'detId': '352932868', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '25/26', 'detId': '352670724', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '19/20', 'detId': '353335300', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '27/28', 'detId': '352671748', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '39/40', 'detId': '353069060', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1300', 'FEC FED crate': 'top', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '3/4', 'detId': '352811012', 'channel': '0x10', 'FEC ID': ''}
+1311:
+		{'FED receiver': 't', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '15/16', 'detId': '353011716', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '9/10', 'detId': '352891908', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '43/44', 'detId': '353277956', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '1/2', 'detId': '352629764', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '47/48', 'detId': '353159172', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '11/12', 'detId': '352892932', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '29/30', 'detId': '352633860', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '21/22', 'detId': '353272836', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '25/26', 'detId': '352752644', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '3/4', 'detId': '352630788', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '5/6', 'detId': '352748548', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '13/14', 'detId': '353010692', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '35/36', 'detId': '353015812', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '7/8', 'detId': '352749572', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '23/24', 'detId': '353273860', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '37/38', 'detId': '352896004', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '45/46', 'detId': '353158148', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '31/32', 'detId': '352634884', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '33/34', 'detId': '353014788', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '41/42', 'detId': '353276932', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '19/20', 'detId': '353155076', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '27/28', 'detId': '352753668', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '39/40', 'detId': '352897028', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1311', 'FEC FED crate': 'up center', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '17/18', 'detId': '353154052', 'channel': '0x12', 'FEC ID': ''}
+1301:
+		{'FED receiver': 't', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '15/16', 'detId': '353064964', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '9/10', 'detId': '353059844', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '1/2', 'detId': '352797700', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '43/44', 'detId': '353318916', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '11/12', 'detId': '353060868', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '29/30', 'detId': '352666628', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '21/22', 'detId': '353326084', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '13/14', 'detId': '353063940', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '25/26', 'detId': '352793604', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '31/32', 'detId': '352667652', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '5/6', 'detId': '352801796', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '7/8', 'detId': '352802820', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '33/34', 'detId': '353055748', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '35/36', 'detId': '353056772', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '23/24', 'detId': '353327108', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '37/38', 'detId': '352928772', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '17/18', 'detId': '353321988', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '47/48', 'detId': '353191940', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '45/46', 'detId': '353190916', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '41/42', 'detId': '353317892', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '19/20', 'detId': '353323012', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '27/28', 'detId': '352794628', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '39/40', 'detId': '352929796', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1301', 'FEC FED crate': 'top', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '3/4', 'detId': '352798724', 'channel': '0x10', 'FEC ID': ''}
+1313:
+		{'FED receiver': 't', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '15/16', 'detId': '353032196', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '9/10', 'detId': '353027076', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '1/2', 'detId': '352764932', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '43/44', 'detId': '353171460', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '11/12', 'detId': '353028100', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '29/30', 'detId': '352773124', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '21/22', 'detId': '353293316', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '13/14', 'detId': '353031172', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '41/42', 'detId': '353170436', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '31/32', 'detId': '352774148', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '5/6', 'detId': '352769028', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '35/36', 'detId': '352909316', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '23/24', 'detId': '353294340', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '37/38', 'detId': '353035268', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '17/18', 'detId': '353289220', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '47/48', 'detId': '353298436', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '45/46', 'detId': '353297412', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '7/8', 'detId': '352770052', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '33/34', 'detId': '352908292', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '25/26', 'detId': '352646148', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '19/20', 'detId': '353290244', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '27/28', 'detId': '352647172', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7d', 'FED channel': '39/40', 'detId': '353036292', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1313', 'FEC FED crate': 'up center', 'FED position': '6', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '3/4', 'detId': '352765956', 'channel': '0x10', 'FEC ID': ''}
+1302:
+		{'FED receiver': 'b', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '41/42', 'detId': '353309700', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '15/16', 'detId': '352925700', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '21/22', 'detId': '353186820', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '1/2', 'detId': '352789508', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '47/48', 'detId': '353183748', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '11/12', 'detId': '353052676', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '29/30', 'detId': '352658436', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '13/14', 'detId': '352924676', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '9/10', 'detId': '353051652', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '3/4', 'detId': '352790532', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '7/8', 'detId': '352663556', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '35/36', 'detId': '353048580', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '5/6', 'detId': '352662532', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '23/24', 'detId': '353187844', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '37/38', 'detId': '352920580', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '17/18', 'detId': '353313796', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '43/44', 'detId': '353310724', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '45/46', 'detId': '353182724', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '33/34', 'detId': '353047556', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '25/26', 'detId': '352785412', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '9', 'CCU': '0x7b', 'FED channel': '19/20', 'detId': '353314820', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '27/28', 'detId': '352786436', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '39/40', 'detId': '352921604', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1302', 'FEC FED crate': 'top', 'FED position': '7', 'FEC position': '10', 'CCU': '0x7b', 'FED channel': '31/32', 'detId': '352659460', 'channel': '0x10', 'FEC ID': ''}
+1310:
+		{'FED receiver': 't', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '15/16', 'detId': '352999428', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '9/10', 'detId': '352887812', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '1/2', 'detId': '352625668', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '43/44', 'detId': '353265668', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '11/12', 'detId': '352888836', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '29/30', 'detId': '352744452', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '21/22', 'detId': '353260548', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '25/26', 'detId': '352740356', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '17/18', 'detId': '353149956', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '5/6', 'detId': '352736260', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '3/4', 'detId': '352626692', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '13/14', 'detId': '352998404', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '35/36', 'detId': '353003524', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '7/8', 'detId': '352737284', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '23/24', 'detId': '353261572', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '37/38', 'detId': '353006596', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '47/48', 'detId': '353269764', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '45/46', 'detId': '353268740', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '33/34', 'detId': '353002500', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '41/42', 'detId': '353264644', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '19/20', 'detId': '353150980', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '27/28', 'detId': '352741380', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '39/40', 'detId': '353007620', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1310', 'FEC FED crate': 'up center', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '31/32', 'detId': '352745476', 'channel': '0x10', 'FEC ID': ''}
+1298:
+		{'FED receiver': 'b', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '41/42', 'detId': '353211396', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '15/16', 'detId': '352860164', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '21/22', 'detId': '353121284', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '1/2', 'detId': '352691204', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '47/48', 'detId': '353118212', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '11/12', 'detId': '352954372', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '29/30', 'detId': '352592900', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '13/14', 'detId': '352859140', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '9/10', 'detId': '352953348', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '3/4', 'detId': '352692228', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '7/8', 'detId': '352598020', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '35/36', 'detId': '352950276', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '5/6', 'detId': '352596996', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '23/24', 'detId': '353122308', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '37/38', 'detId': '352855044', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '17/18', 'detId': '353215492', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '43/44', 'detId': '353212420', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '45/46', 'detId': '353117188', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '33/34', 'detId': '352949252', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '25/26', 'detId': '352687108', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '19/20', 'detId': '353216516', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '27/28', 'detId': '352688132', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '39/40', 'detId': '352856068', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1298', 'FEC FED crate': 'top', 'FED position': '3', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '31/32', 'detId': '352593924', 'channel': '0x10', 'FEC ID': ''}
+1299:
+		{'FED receiver': 't', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '15/16', 'detId': '352851972', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '9/10', 'detId': '352945156', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '1/2', 'detId': '352683012', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '47/48', 'detId': '353204228', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '11/12', 'detId': '352946180', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '29/30', 'detId': '352678916', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '21/22', 'detId': '353113092', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '13/14', 'detId': '352850948', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '41/42', 'detId': '353199108', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '31/32', 'detId': '352679940', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '5/6', 'detId': '352588804', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '35/36', 'detId': '352937988', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '7/8', 'detId': '352589828', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '23/24', 'detId': '353114116', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '37/38', 'detId': '352941060', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '17/18', 'detId': '353207300', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '43/44', 'detId': '353200132', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7c', 'FED channel': '45/46', 'detId': '353203204', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '33/34', 'detId': '352936964', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '25/26', 'detId': '352674820', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '19/20', 'detId': '353208324', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '27/28', 'detId': '352675844', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '10', 'CCU': '0x7c', 'FED channel': '39/40', 'detId': '352942084', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1299', 'FEC FED crate': 'top', 'FED position': '4', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '3/4', 'detId': '352684036', 'channel': '0x10', 'FEC ID': ''}
+1296:
+		{'FED receiver': 't', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '15/16', 'detId': '352974852', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '9/10', 'detId': '352871428', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '1/2', 'detId': '352609284', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '43/44', 'detId': '353130500', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '11/12', 'detId': '352872452', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '29/30', 'detId': '352707588', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '21/22', 'detId': '353235972', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '13/14', 'detId': '352973828', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '41/42', 'detId': '353129476', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '31/32', 'detId': '352708612', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '3/4', 'detId': '352610308', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '5/6', 'detId': '352711684', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '35/36', 'detId': '352868356', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '7/8', 'detId': '352712708', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '23/24', 'detId': '353236996', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '37/38', 'detId': '352969732', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '47/48', 'detId': '353232900', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '45/46', 'detId': '353231876', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '33/34', 'detId': '352867332', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '25/26', 'detId': '352605188', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '19/20', 'detId': '353134596', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '27/28', 'detId': '352606212', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '39/40', 'detId': '352970756', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1296', 'FEC FED crate': 'top', 'FED position': '1', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '17/18', 'detId': '353133572', 'channel': '0x12', 'FEC ID': ''}
+1297:
+		{'FED receiver': 't', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '15/16', 'detId': '352966660', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '9/10', 'detId': '352863236', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '1/2', 'detId': '352601092', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '43/44', 'detId': '353220612', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '11/12', 'detId': '352864260', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '29/30', 'detId': '352699396', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '21/22', 'detId': '353227780', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '13/14', 'detId': '352965636', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '25/26', 'detId': '352695300', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '31/32', 'detId': '352700420', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '5/6', 'detId': '352703492', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '3/4', 'detId': '352602116', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '7/8', 'detId': '352704516', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '35/36', 'detId': '352958468', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '23/24', 'detId': '353228804', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '37/38', 'detId': '352961540', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '47/48', 'detId': '353224708', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '45/46', 'detId': '353223684', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '33/34', 'detId': '352957444', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '41/42', 'detId': '353219588', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '19/20', 'detId': '353126404', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '27/28', 'detId': '352696324', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '39/40', 'detId': '352962564', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1297', 'FEC FED crate': 'top', 'FED position': '2', 'FEC position': '9', 'CCU': '0x7d', 'FED channel': '17/18', 'detId': '353125380', 'channel': '0x12', 'FEC ID': ''}
+1312:
+		{'FED receiver': 'b', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '41/42', 'detId': '353285124', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '15/16', 'detId': '352901124', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '9/10', 'detId': '353018884', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '43/44', 'detId': '353286148', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '1/2', 'detId': '352756740', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '47/48', 'detId': '353167364', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '11/12', 'detId': '353019908', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '29/30', 'detId': '352642052', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '13/14', 'detId': '352900100', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '21/22', 'detId': '353162244', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '3/4', 'detId': '352757764', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '7/8', 'detId': '352638980', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '35/36', 'detId': '353024004', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '5/6', 'detId': '352637956', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '23/24', 'detId': '353163268', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '37/38', 'detId': '352904196', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '17/18', 'detId': '353281028', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '45/46', 'detId': '353166340', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '33/34', 'detId': '353022980', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '25/26', 'detId': '352760836', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 't', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '9', 'CCU': '0x7e', 'FED channel': '19/20', 'detId': '353282052', 'channel': '0x12', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '27/28', 'detId': '352761860', 'channel': '0x10', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '39/40', 'detId': '352905220', 'channel': '0x11', 'FEC ID': ''}
+		{'FED receiver': 'b', 'FED ID': '1312', 'FEC FED crate': 'up center', 'FED position': '5', 'FEC position': '10', 'CCU': '0x7e', 'FED channel': '31/32', 'detId': '352643076', 'channel': '0x10', 'FEC ID': ''}
