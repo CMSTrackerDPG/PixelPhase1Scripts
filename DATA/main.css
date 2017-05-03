@@ -1,0 +1,22 @@
+h1{
+  text-align: center;
+}
+
+.l-box {
+  padding: 1em;
+}
+
+iframe{
+  width: 100%;
+  height: 600px;
+  /*border: none;*/    
+}
+
+textarea{
+  max-height: 180px;
+  max-width: 100%;
+  min-height: 100px;
+  min-width: 120px;
+  width: 100%;
+  height: 180px;
+}
