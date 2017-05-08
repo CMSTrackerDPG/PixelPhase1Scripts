@@ -32,7 +32,7 @@ PixelTrackerShow.showData = function (evt)
     var id = myPoly.getAttribute("detId");
     var oid = myPoly.getAttribute("oid");
     var fedChannel = myPoly.getAttribute("FEDchannel");
-    // var LVRack = id.substring(0,id.length - 4);  
+    // var LVRack = id.substring(0,id.tooltipWidth - 4);  
     // myTracker = "Rack " + LVRack + " " + myTracker;  
     // var myTracker1 = "  value="+myPoly.getAttribute("value");
     // myTracker1 = myTracker1+"  count="+myPoly.getAttribute("count");
@@ -71,18 +71,36 @@ function ShowTooltip(evt)
   var tooltip_bg = document.getElementById('tooltip_bg');
   var infoTable = document.getElementById('infoTable');
   
+  var winWidth = window.innerWidth;
+  var winHeight = window.innerHeight;
+  
+  var tooltipX = evt.pageX+3;
+  var tooltipY = evt.pageY;
+  
+  var tooltipWidth = 350;//document.getElementById('line1').getComputedTextLength();
+  var tooltipHeight = 100;
+  
+  if (tooltipX + tooltipWidth >= winWidth)
+  {
+    tooltipX = evt.pageX - 3 - tooltipWidth;
+  }
+  if (tooltipY + tooltipHeight >= winHeight)
+  {
+    tooltipY = evt.pageY - tooltipHeight + 20
+  }
+  
   // tooltip.setAttributeNS(null,"x",evt.pageX+10);
   // tooltip.setAttributeNS(null,"y",evt.pageY+16);
   // tooltip.setAttributeNS(null,"visibility","visible");
   
-  length = 400;//document.getElementById('line1').getComputedTextLength();
-  tooltip_bg.setAttributeNS(null,"x",evt.pageX+8);
-	tooltip_bg.setAttributeNS(null,"y",evt.pageY+0);
-	tooltip_bg.setAttributeNS(null,"visibility","visible");
-  tooltip_bg.setAttributeNS(null,"width",length+8);
   
-  infoTable.setAttributeNS(null,"x",evt.pageX+8);
-	infoTable.setAttributeNS(null,"y",evt.pageY+0);
+  tooltip_bg.setAttributeNS(null,"x",tooltipX);
+	tooltip_bg.setAttributeNS(null,"y",tooltipY);
+	tooltip_bg.setAttributeNS(null,"visibility","visible");
+  tooltip_bg.setAttributeNS(null,"width",tooltipWidth);
+  
+  infoTable.setAttributeNS(null,"x",tooltipX);
+	infoTable.setAttributeNS(null,"y",tooltipY);
 	infoTable.setAttributeNS(null,"visibility","visible");
 }
 function HideTooltip()

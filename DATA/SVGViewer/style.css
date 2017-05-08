@@ -4,9 +4,6 @@
   stroke-width: 1;
   stroke-dasharray: 1;
   opacity: 0.85;
-  
-  width: 40px;
-  height: 90px;
 
   filter:drop-shadow(4px 6px 4px #AAA);
 }
@@ -18,20 +15,21 @@
 }
 
 .myGrid .myGridCellTh{
-  width: 150px;
+  width: 100px;
   height: 1.25em;
   float: left;
   font-weight: bold;
 }
 
 .myGrid .myGridCell{
-  width: 100px;
+  width: 200px;
   height: 1.25em;
   float: left;
 }
 
 body{
   font-size: small;
+  width: 400px;
 }
 
 .infoTable{
@@ -66,18 +64,19 @@ polygon:hover{
   font-weight: bolder;
 }
 
-body{
-  width: 400px;
-}
-
 svg{
-  width: 2000px;
-  height: 900px;
+  /* width: 2000px; */
+  /* height: 900px; */
+  /* transform: scale(1.0); */
 }
 
 svg#mainMap{
   background-color: rgb(255, 255, 255);
-  transform: translate(0px, 0px);
+  /* transform: scale(1); */
+}
+
+#allGeometryGroup{
+  transform: scale(0.7);
 }
 
 #barrelPolygonGroup{

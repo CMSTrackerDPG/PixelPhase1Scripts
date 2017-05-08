@@ -43,7 +43,7 @@ with open(cablingFileName, "r") as inputCabl:
     if isFirstLine:
       categories = deepcopy(strSpl)
       for i in range(len(categories)):
-        categoryNamePositionDic.update({categories[i].strip() : i})
+        categoryNamePositionDic.update({categories[i].strip() : i}) # assign column number to the column name
       for k in categoryNamePositionDic:
         print(k, categoryNamePositionDic[k])
       isFirstLine = False
@@ -72,11 +72,11 @@ with open(cablingFileName, "r") as inputCabl:
 
 # PrintTracker(pixelCablingInfoDic, "input.txt", "output.png", "detIdsOut.txt")
 
-with open(outDicTxtFileName, "w") as outfile:
-  for k in pixelCablingInfoDicFed:
-    outfile.write("%s:\n" % (k))
-    for c in pixelCablingInfoDicFed[k]:
-      outfile.write("\t\t%s\n" % (str(pixelCablingInfoDicFed[k][c])))        
+# with open(outDicTxtFileName, "w") as outfile:
+  # for k in pixelCablingInfoDicFed:
+    # outfile.write("%s:\n" % (k))
+    # for c in pixelCablingInfoDicFed[k]:
+      # outfile.write("\t\t%s\n" % (str(pixelCablingInfoDicFed[k][c])))        
 
 pickle.dump(pixelCablingInfoDic, open("DATA/cablingDic.pkl", "wb" ))
 for k in pixelCablingInfoDic:
