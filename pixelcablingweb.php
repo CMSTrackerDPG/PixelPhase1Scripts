@@ -71,7 +71,7 @@ if (isset($_POST["getCabling"]))
 <div class="pure-g">
   <div class= "pure-u-1-5">
     <div class="l-box">
-      <img style="height: 6em;" src="http://radecs2017.vitalis-events.com/wp-content/uploads/2016/09/CERN_logo2.svg_.png"/>
+      <img style="height: 4em;" src="http://radecs2017.vitalis-events.com/wp-content/uploads/2016/09/CERN_logo2.svg_.png"/>
     </div>
   </div>
   <div class= "pure-u-3-5">
@@ -81,7 +81,7 @@ if (isset($_POST["getCabling"]))
   </div>
     <div class= "pure-u-1-5">
     <div class="l-box">
-      <img style="position: absolute; right: 1em; height: 6em" src="https://cms-docdb.cern.ch/cgi-bin/PublicDocDB/RetrieveFile?docid=3045&filename=CMSlogo_black_label_1024_May2014.png&version=3"/>
+      <img style="position: absolute; right: 1em; height: 4em" src="https://cms-docdb.cern.ch/cgi-bin/PublicDocDB/RetrieveFile?docid=3045&filename=CMSlogo_black_label_1024_May2014.png&version=3"/>
     </div>
   </div>
 </div>
@@ -118,7 +118,7 @@ if (isset($_POST["getCabling"]))
         if (isset($_POST["getCabling"]))
         {
           // echo "<div style=\"transform: scale(0.7);\">";
-          echo "<embed src='xml_cabling_web_from_tmp.php?file=$outputXMLFileName'>";
+          echo "<embed src='render_cabling_web_from_tmp.php?file=$outputXMLFileName&contenttype=text/xml'>";
           // echo "<iframe src='txt_cablingweb_from_tmp.php?file=$outDicTxtFileName'></iframe>";
           // echo "</div>";
         }
@@ -129,7 +129,7 @@ if (isset($_POST["getCabling"]))
     <?php
       if (isset($_POST["getCabling"]))
       {
-        echo "<a href='txt_cablingweb_from_tmp.php?file=$outDicTxtFileName'>Link to the cabling info file </a>";
+        echo "<a href='render_cabling_web_from_tmp.php?file=$outDicTxtFileName&contenttype=text/plain'>Link to the cabling info file </a>";
       }
     ?>
   </div>

@@ -286,12 +286,13 @@ if fedDBInfoFileName != "":
         tmpDic.update({"FED channel" : fedCh})
         
         pixelCablingInfoDic.update({detId : tmpDic})
-      
+
+# save pixelCablingInfoDic to the textfile
 with open(outDicTxtFileName, "w") as tmpFile:
   for k in pixelCablingInfoDic:
     dic = pixelCablingInfoDic[k]
-    s = dic["detId"]
-    for k2 in sorted(dic): #to be fixed....
+    s = dic["detId"] + " "
+    for k2 in sorted(dic): 
       s = s + k2 + ":" + dic[k2] + ", "
     tmpFile.write(s + "\n")
 
