@@ -127,7 +127,7 @@ class PixelTrackerMap:
     infoDic = {"detId" : rawId, "oid" : onlineId}
     
     if self.detid_fedid_searchOption == "fedid":
-      fedid = (self.cablingInfoDetID[rawId])["FED ID"]
+      fedid = (self.cablingInfoDetID[rawId])["FED ID"]  # if CMSSW would not fire it will crash on the first barrel element
       if fedid in self.inputModules:
         fillColor = self.inputModules[fedid]          
       else:
