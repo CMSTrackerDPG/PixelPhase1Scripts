@@ -22,9 +22,12 @@ onlineMaxBlade = [11, 17]
 maxOnlineModule = 4
 maxOnlineDisk = 3
 #
-useNumberAsPartName = True  # does it accept numbers or mO, pI etc.
+useNumberAsPartName = False  # does it accept numbers or mO, pI etc.
 inputFileName = "input.dat" #default file name
 hRes, vRes = 1920, 1080
+useFileSuffix = False
+colorCoded = False
+pixelAlive = False
 ### GLOBAL VARS
 
 class HistogramManager:
@@ -74,7 +77,14 @@ class HistogramManager:
       histRef = self.barrelHists[b.layer - 1]
       
       binNum = histRef.FindBin(coord[0], coord[1])
-      histRef.SetBinContent(binNum, b.roc + 1)
+      if colorCoded:
+        binContent = TranslateReasonStringBPix(b.reason)
+      elif pixelAlive:
+        binContent = float(b.reason)
+      else:
+        binContent = b.roc + 1
+
+      histRef.SetBinContent(binNum, binContent)
       # self.barrelHists[b.layer - 1].Fill(coord[0], coord[1], b.roc + 1) 
 
     for f in forwardObjs:
@@ -82,7 +92,13 @@ class HistogramManager:
       histRef = self.forwardHists[f.ring - 1]
       
       binNum = histRef.FindBin(coord[0], coord[1])
-      histRef.SetBinContent(binNum, f.roc + 1)      
+
+      if colorCoded:
+        binContent = TranslateReasonStringFPix(f.reason)
+      else:
+        binContent = f.roc + 1
+      histRef.SetBinContent(binNum, binContent)      
+
       # self.forwardHists[f.ring - 1].Fill(coord[0], coord[1], f.roc + 1)
   
   def drawLine(self, lineObj, x1, x2, y1, y2, width=2, style=1, color=1):  
@@ -174,11 +190,11 @@ class HistogramManager:
         x1 = x1_base + j * xBaseStep
         x2 = x2_base + j * xBaseStep
 
-        self.drawRectangle(lineObj, x1, x2, y1, y2, color=8)
+        #self.drawRectangle(lineObj, x1, x2, y1, y2, color=8)
 
         x1, x2 = -x1, -x2
         yPosChange = -zeroModuleHeight if i % 2 else zeroModuleHeight
-        self.drawRectangle(lineObj, x1, x2, y1 - yPosChange, y2 - yPosChange, color=8)
+        #self.drawRectangle(lineObj, x1, x2, y1 - yPosChange, y2 - yPosChange, color=8)
 
       # positive ladders/blades
       y1 = y1 - yMin + yBaseStep
@@ -188,24 +204,40 @@ class HistogramManager:
         x1 = x1_base + j * xBaseStep
         x2 = x2_base + j * xBaseStep
 
-        self.drawRectangle(lineObj, x1, x2, y1, y2, color=8)
+        #self.drawRectangle(lineObj, x1, x2, y1, y2, color=8)
 
         x1, x2 = -x1, -x2
-        self.drawRectangle(lineObj, x1, x2, y1 - yPosChange, y2 - yPosChange, color=8)
+        #self.drawRectangle(lineObj, x1, x2, y1 - yPosChange, y2 - yPosChange, color=8)
+
+      #hist.GetZaxis().SetRangeUser(-0.5,15.5)
 
   def saveHistograms(self):
     for hists in [self.barrelHists, self.forwardHists]:
       for hist in hists:
         if hist.GetEntries():
           c1 = ROOT.TCanvas(hist.GetName(), hist.GetName(), hRes, vRes)
+          if colorCoded:
+            hist.GetZaxis().SetRangeUser(0,5)
+            ROOT.gStyle.SetPalette(55)
+          elif pixelAlive:
+            hist.GetZaxis().SetRangeUser(0,4160)
+            ROOT.gStyle.SetPalette(70)
           hist.Draw()
           self.prettifyCanvas(hist)
-          c1.Print(hist.GetName() + ".png")
-    
+          colorString = ""
+          if colorCoded:
+            colorString = "_coded"
+          elif pixelAlive:
+            colorString = "_pixelalive"
+          if useFileSuffix:
+            c1.Print(hist.GetName() + colorString + "_" + inputFileName[:-4] + ".png")
+          else:
+            c1.Print(hist.GetName() + colorString + ".png")
+            
 #####################################################
 
 class Barrel:
-  def __init__ (self, part, sector, layer, ladder, module, roc):
+  def __init__ (self, part, sector, layer, ladder, module, roc, reason="unknown"):
     self.part = part
     self.sector = sector
     self.layer = layer
@@ -213,6 +245,7 @@ class Barrel:
     self.module = module
     self.roc = roc
     self.isCoverted = False
+    self.reason = reason
   def __str__(self):
     return str([self.part, self.sector, self.layer, self.ladder, self.module])
   def convertParts(self):
@@ -252,13 +285,14 @@ class Barrel:
     return x, y    
 
 class Forward:
-  def __init__ (self, part, disk, blade, panel, ring, roc):
+  def __init__ (self, part, disk, blade, panel, ring, roc, reason="unknown"):
     self.part = part
     self.disk = disk
     self.blade = blade
     self.panel = panel
     self.ring = ring
     self.roc = roc
+    self.reason = reason
     self.isCoverted = False
   def __str__(self):
     return str([self.part, self.disk, self.blade, self.panel, self.ring])
@@ -295,8 +329,45 @@ def TranslatePartString(thePartStr):
     return 4
   else:
     print("Unrecognized part <%s>, the script is likely to crash..." % (thePartStr))
+
+def TranslateReasonStringBPix(theReasonStr):
+  if theReasonStr == "unknown":
+    return 1
+  elif theReasonStr == "notprogrammable":
+    return 1
+  elif theReasonStr == "vcthr":
+    return 2
+  elif theReasonStr == "pixelalive":
+    return 2
+  elif theReasonStr == "iana":
+    return 2
+  elif theReasonStr == "calib":
+    return 2
+  elif theReasonStr== "fedphases":
+    return 4
+  elif theReasonStr == "tbmdelay":
+    return 3
+  elif theReasonStr == "power":
+    return 5
+  else:
+    return 1
+    print("Unrecognized part <%s>, the script is likely to crash..." % (theReasonStr))
+
+def TranslateReasonStringFPix(theReasonStr):
+  if theReasonStr == "flaky":
+    return 1
+  elif theReasonStr == "dead":
+    return 5
+  elif theReasonStr == "portcard":
+    return 3
+  elif theReasonStr == "unknown":
+    return 2
+  else:
+    return 2
+    print("Unrecognized part <%s>, the script is likely to crash..." % (theReasonStr))
+
     
-def GetOnlineBarrelCharacteristics(detElements, roc):
+def GetOnlineBarrelCharacteristics(detElements, roc, reason="unknown"):
   onlinePart = int(detElements[1][1:]) if useNumberAsPartName else TranslatePartString(detElements[1][1:])
   onlineSector = int(detElements[2][3:])
   onlineLayer = int(detElements[3][3:])
@@ -308,16 +379,39 @@ def GetOnlineBarrelCharacteristics(detElements, roc):
     
   onlineModule = int(detElements[5][3:])
 
-  return Barrel(*[onlinePart, onlineSector, onlineLayer, onlineLadder, onlineModule, roc])
+  return Barrel(*[onlinePart, onlineSector, onlineLayer, onlineLadder, onlineModule, roc, reason])
 
-def GetOnlineForwardCharacteristics(detElements, roc):
+def GetOnlineForwardCharacteristics(detElements, roc, reason="unknown"):
   onlinePart = int(detElements[1][1:]) if useNumberAsPartName else TranslatePartString(detElements[1][1:])
   onlineDisk = int(detElements[2][1:])
   onlineBlade = int(detElements[3][3:])
   onlinePanel = int(detElements[4][3:])
   onlineRing = int(detElements[5][3:])
 
-  return Forward(*[onlinePart, onlineDisk, onlineBlade, onlinePanel, onlineRing, roc])
+  return Forward(*[onlinePart, onlineDisk, onlineBlade, onlinePanel, onlineRing, roc, reason])
+
+
+def GetAffectedRocs(rocString):
+
+    rocString = str(rocString)
+    iComma=rocString.find(",")
+    listOfRocs = []
+    
+    if iComma!=-1:
+        listOfRocs.extend(GetAffectedRocs(rocString[0:iComma]))
+        listOfRocs.extend(GetAffectedRocs(rocString[iComma+1:len(rocString)]))
+    else:
+        iHyphen=rocString.find("-")
+        if iHyphen!=-1:
+            start=int(rocString[0:iHyphen])
+            end=int(rocString[iHyphen+1:len(rocString)])+1
+            listOfRocs.extend(range(start,end))
+        else:
+            return [int(rocString)]
+        
+    return listOfRocs
+    
+
 
 #####################################################
 
@@ -330,10 +424,16 @@ if len(sys.argv) > 1:
   print(inputFileName)
   
   if len(sys.argv) > 2:
-    opts, args = getopt.getopt(sys.argv[2:], "b", ["help", "output="])
+    opts, args = getopt.getopt(sys.argv[2:], "bscp", ["help", "output="])
     for o, a in opts:
       if o == "-b":
         useNumberAsPartName = False
+      if o == "-s":
+        useFileSuffix = True
+      if o == "-c":
+        colorCoded = True
+      if o == "-p":
+        pixelAlive = True
 
 i = 1
 with open (inputFileName, "r") as inputFile:
@@ -346,24 +446,30 @@ with open (inputFileName, "r") as inputFile:
     if len(inputs) >= 2: # but take only first 2 elements (ignore others like '\n')
 
       detElements = inputs[0].split("_")
-      roc = int(inputs[1]) - 1 #shifts 1..16 rocNum to 0..15
+      rocs = GetAffectedRocs(inputs[1]) #int(inputs[1]) #- 1 #shifts 0..16 rocNum to 0..15
 
-      if detElements[0][0] == "B":
-        barrelObj = GetOnlineBarrelCharacteristics(detElements, roc)
-        # print(barrelObj)
-        barrelObj.convertParts()
-        # print(barrelObj)
-        barrelObjs.append(barrelObj)
-      elif detElements[0][0] == "F":
-        forwardObj = GetOnlineForwardCharacteristics(detElements, roc)
-        # print(forwardObj)
-        forwardObj.convertParts()
-        # print(forwardObj)
-        forwardObjs.append(forwardObj)
+      if len(inputs) == 3:
+        reason = str(inputs[2]).lower().strip()
       else:
-        print("Not recognized part type")
+        reason="unknown"
 
-    i = i + 1
+      for roc in rocs:
+        if detElements[0][0] == "B":
+          barrelObj = GetOnlineBarrelCharacteristics(detElements, roc, reason)
+          #print(barrelObj)
+          barrelObj.convertParts()
+          # print(barrelObj)
+          barrelObjs.append(barrelObj)
+        elif detElements[0][0] == "F":
+          forwardObj = GetOnlineForwardCharacteristics(detElements, roc, reason)
+          # print(forwardObj)
+          forwardObj.convertParts()
+          # print(forwardObj)
+          forwardObjs.append(forwardObj)
+        else:
+          print("Not recognized part type")
+          
+        i = i + 1
 
 histMan.fillHistograms(barrelObjs, forwardObjs)
 histMan.saveHistograms()  
