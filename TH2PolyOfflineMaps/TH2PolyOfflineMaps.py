@@ -10,20 +10,28 @@ gROOT.SetBatch()        # don't pop up canvases
 # Default values
 inputFileName = "DQM_V0013_R000292154__StreamExpressCosmics__Commissioning2017-Express-v1__DQMIO.root"
 outputDirectoryName = "OUT/"
+minMaxFileName = "minmax.out"
 detIDsFileName = "DATA/detids.dat"
 
+#default one
 baseRootDirs = ["DQMData/Run 292154/PixelPhase1/Run summary/Phase1_MechanicalView"
                 ,"DQMData/Run 292154/PixelPhase1/Run summary/Tracks"
                 ]
                 
-baseRootDirsAliases = {baseRootDirs[0]:""
-                    , baseRootDirs[1]:"T"
-                    }
                     
 maxPxBarrel = 4
 maxPxForward = 3
 barrelLadderShift = [0, 14, 44, 90]
-forwardDiskShift = [25, 75, 125]
+
+forwardDiskXShift = [25, 75, 125]
+forwardDiskYShift = 45; # to make +DISK on top in the 'strip-like' layout
+
+plotWidth, plotHeight = 1500, 1300
+extremeBinsNum = 20
+
+minNumVal = 1e-6
+minResVal = -0.1
+maxResVal = 0.1
 
 class TH2PolyOfflineMaps:
   
@@ -34,8 +42,12 @@ class TH2PolyOfflineMaps:
   ############################################################################
   
   def __TraverseDirTree(self, dir):
-  
-    currPath = (dir.GetPath().split(":/"))[1]
+    
+    try:
+      currPath = (dir.GetPath().split(":/"))[1]
+    except:
+      print("Exception raised: Path not found in the input file")
+      return
   
     for obj in dir.GetListOfKeys():
       if not obj.IsFolder():
@@ -150,18 +162,8 @@ class TH2PolyOfflineMaps:
         currentGroupName = objNameCollected
       groupOfHists.append(obj)
     self.groupedHistograms.append(groupOfHists) #the last group
-       
-  def __CreateDummyStructAsStr(self, dicData):
-    str = "struct MyStruct{"
-    str = str + "Int_t key;"
-    leafStr = "key/I"
-    for k in dicData:
-      str = str + "Float_t " + k + ";"
-      leafStr = leafStr + ":" + k + "/F"
-    str = str + "};"
-    return str, leafStr
     
-  def __AddNamedBins(self, geoFile, tX, tY, sX, sY):
+  def __AddNamedBins(self, geoFile, tX, tY, sX, sY, applyModuleRotation = False):
 
     for line in geoFile:
       lineSpl = line.strip().split("\"")
@@ -174,7 +176,10 @@ class TH2PolyOfflineMaps:
       verNum = 1
       for coord in xy:
         coordSpl = coord.split(",")
-        x.append(float(coordSpl[0]) * sX + tX)
+        if applyModuleRotation:
+          x.append(-float(coordSpl[0]) * sX + tX)
+        else:
+          x.append(float(coordSpl[0]) * sX + tX)
         y.append(float(coordSpl[1]) * sY + tY)
         verNum = verNum + 1
       #close polygon
@@ -184,15 +189,19 @@ class TH2PolyOfflineMaps:
       # print(detId, vertices)
       # print(x)
       # print(y)
-      
-      bin = TGraph(verNum, x, y)
+      if applyModuleRotation:
+        bin = TGraph(verNum, y, x)
+      else:
+        bin = TGraph(verNum, x, y)
+      # bin = TGraph(verNum, y, x) # rotation by 90 deg (so that it had the same layout as for the strips)
       bin.SetName(detId)
       
       self.__BaseTrackerMap.AddBin(bin)
     
   def __CreateTrackerBaseMap(self):
   
-    self.__BaseTrackerMap = TH2Poly("Summary", "Tracker Map", -65, 65, 0, 160)
+    self.__BaseTrackerMap = TH2Poly("Summary", "Tracker Map", -10, 160, -70, 70)
+    # self.__BaseTrackerMap = TH2Poly("Summary", "Tracker Map", 0, 0, 0, 0)
     self.__BaseTrackerMap.SetFloat(1)
     self.__BaseTrackerMap.GetXaxis().SetTitle("")
     self.__BaseTrackerMap.GetYaxis().SetTitle("")
@@ -205,23 +214,23 @@ class TH2PolyOfflineMaps:
         currBarrelTranslateX = 0
         currBarrelTranslateY = barrelLadderShift[i]
         
-        self.__AddNamedBins(geoFile, currBarrelTranslateX, currBarrelTranslateY, 1, 1)
+        self.__AddNamedBins(geoFile, currBarrelTranslateX, currBarrelTranslateY, 1, 1, True)
       
       # break # debug only 1st layer
       
     # MINUS FORWARD
     for i in range(-maxPxForward, 0):
       with open(self.geometryFilenames[maxPxBarrel + maxPxForward + i], "r") as geoFile:
-        currForwardTranslateX = -45;
-        currForwardTranslateY = forwardDiskShift[-i - 1]
+        currForwardTranslateX = forwardDiskXShift[-i - 1]
+        currForwardTranslateY = -forwardDiskYShift
         
         self.__AddNamedBins(geoFile, currForwardTranslateX, currForwardTranslateY, 1, 1)
         
     # PLUS FORWARD
     for i in range(maxPxForward):
       with open(self.geometryFilenames[maxPxBarrel + maxPxForward + i], "r") as geoFile:
-        currForwardTranslateX = 45;
-        currForwardTranslateY = forwardDiskShift[i - 1]
+        currForwardTranslateX = forwardDiskXShift[i - 1]
+        currForwardTranslateY = forwardDiskYShift
         
         self.__AddNamedBins(geoFile, currForwardTranslateX, currForwardTranslateY, 1, 1)
    
@@ -231,9 +240,10 @@ class TH2PolyOfflineMaps:
     
   ############################################################################
 
-  def __init__(self, inputDQMName, outputDirName, modDicName, dirs, dirsAliases):
+  def __init__(self, inputDQMName, outputDirName, minMaxFileName, modDicName, dirs, dirsAliases):
     self.inputFileName = inputDQMName
     self.outputDirName = outputDirName
+    self.minMaxFileName = minMaxFileName
     self.detIDsFileName = modDicName
     self.dirs = dirs
     self.dirsAliases = dirsAliases
@@ -282,6 +292,9 @@ class TH2PolyOfflineMaps:
     if self.inputFile.IsOpen():
       for group in self.groupedHistograms:
         # name = ''.join(group[0].GetName().split("_")[0:-1])
+        if len(group) == 0:
+          return
+        print(group[0].GetName())
         name = ''.join(group[0].GetName().split("_per_")[0])
         self.availableNames.append(name)
         # print(name)
@@ -333,31 +346,66 @@ class TH2PolyOfflineMaps:
     for i in self.availableNames:
       print(i)
     print(len(self.availableNames))
-    
-    # for key in self.internalData:
-      # internalKeys = self.internalData[key].keys()
-      # print(internalKeys)
-      # break
       
   def PrintTrackerMaps(self):
     monitoredValues = []
+    gStyle.SetPalette(1)
     for key in self.internalData:
       monitoredValues = self.internalData[key].keys()
       # print(monitoredValues)
       break
-      
-    for mv in monitoredValues:
-      currentHist = deepcopy(self.__BaseTrackerMap)
-      currentHist.SetTitle("Tracker Map for " + mv)
-      
-      for detId in self.internalData:
-        val = (self.internalData[detId])[mv]
-        currentHist.Fill(str(detId), val)
+    
+    with open(self.outputDirName + self.minMaxFileName, "w") as minMaxFile:
+    
+      for mv in monitoredValues:
+        currentHist = deepcopy(self.__BaseTrackerMap)
+        currentHist.SetTitle("Tracker Map for " + mv)
+        if "res" in mv:
+          currentHist.SetMinimum(minResVal)
+          currentHist.SetMaximum(maxResVal)
+        else:
+          currentHist.SetMinimum(minNumVal)
         
-      c1 = TCanvas(mv, mv, 1500 , 1500)
-      # c1.SetLogz()
-      currentHist.Draw("AC COLZ L")
-      c1.Print(self.outputDirName + mv + ".png")
+        listOfVals = []
+        for detId in self.internalData:
+          val = (self.internalData[detId])[mv]
+          listOfVals.append([val, detId])
+          currentHist.Fill(str(detId), val)
+          
+        listOfVals = sorted(listOfVals, key = lambda item: item[0])
+        
+        minMaxFile.write("\n" + mv + "\n\n")
+        
+        minMaxFile.write("MIN:\n")
+        for i in range(extremeBinsNum):
+          minMaxFile.write("\t" + str(listOfVals[i][1]) + " " + str(listOfVals[i][0]) + "\n")
+        
+        minMaxFile.write("MAX:\n")
+        for i in range(extremeBinsNum):
+          minMaxFile.write("\t" + str(listOfVals[-i - 1][1]) + " " + str(listOfVals[-i - 1][0]) + "\n")
+        
+        c1 = TCanvas(mv, mv, plotWidth , plotHeight)
+        # c1.SetLogz()
+        currentHist.Draw("AC COLZ L")
+        
+        # add some captions
+        txt = TText()
+        txt.SetNDC();
+        txt.SetTextFont(1)
+        txt.SetTextColor(1)
+        txt.SetTextSize(0.03)
+        txt.SetTextAlign(22)
+        txt.SetTextAngle(0)
+        
+        txt.DrawText(0.5, 0.125, "-DISK")
+        txt.DrawText(0.5, 0.075, "NUMBER ->")
+        txt.DrawText(0.5, 0.875, "+DISK")
+        
+        txt.SetTextAngle(90)
+        txt.DrawText(0.125, 0.5, "BARREL")
+  
+        #save to the png
+        c1.Print(self.outputDirName + mv + ".png")
       
   def __del__(self):
     if self.inputFile.IsOpen():
@@ -370,7 +418,19 @@ for i in range(1, len(sys.argv), 1):
   elif i == 2:
     detIDsFileName = sys.argv[i]
 
-readerObj = TH2PolyOfflineMaps(inputFileName, outputDirectoryName, detIDsFileName, baseRootDirs, baseRootDirsAliases)  
+deductedRunNumber = inputFileName.split("_R000")[1][0:6]
+print(deductedRunNumber)
+
+baseRootDirs = ["DQMData/Run " + deductedRunNumber + "/PixelPhase1/Run summary/Phase1_MechanicalView"    #maybe read it from the input file???
+                ,"DQMData/Run " + deductedRunNumber + "/PixelPhase1/Run summary/Tracks"
+                ]
+                
+baseRootDirsAliases = {baseRootDirs[0]:""
+                    , baseRootDirs[1]:"T"
+                    }
+    
+readerObj = TH2PolyOfflineMaps(inputFileName, outputDirectoryName, minMaxFileName, detIDsFileName, baseRootDirs, baseRootDirsAliases)  
 readerObj.ReadHistograms()
 # readerObj.DumpData()
 readerObj.PrintTrackerMaps()
+
