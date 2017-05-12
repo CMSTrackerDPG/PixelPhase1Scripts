@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import sys
+import os
 from ROOT import *
 from copy import deepcopy
 from array import array
@@ -355,6 +356,9 @@ class TH2PolyOfflineMaps:
       # print(monitoredValues)
       break
     
+    if os.path.exists(self.outputDirName) == False: # check whether directory exists
+      os.system("mkdir " + self.outputDirName)
+    
     with open(self.outputDirName + self.minMaxFileName, "w") as minMaxFile:
     
       for mv in monitoredValues:
@@ -433,4 +437,3 @@ readerObj = TH2PolyOfflineMaps(inputFileName, outputDirectoryName, minMaxFileNam
 readerObj.ReadHistograms()
 # readerObj.DumpData()
 readerObj.PrintTrackerMaps()
-
