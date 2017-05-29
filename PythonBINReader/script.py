@@ -12,11 +12,6 @@ inputFileName = "DQM.root"
 outputFileName = "DQMTree.root"
 detIDsFileName = "detids.dat"
 
-baseRootDirs = ["DQMData/Run 1/PixelPhase1/Run summary/Phase1_MechanicalView",
-                "DQMData/Run 1/PixelPhase1/Run summary/Tracks"]
-                
-baseRootDirsAliases = {baseRootDirs[0]:"", baseRootDirs[1]:"T"}
-
 
 class ModuleLvlValuesReader:
 
@@ -152,17 +147,22 @@ class ModuleLvlValuesReader:
     
   ############################################################################
 
-  def __init__(self, inputDQMName, outputDQMName, modDicName, dirs, dirsAliases):
+  def __init__(self, inputDQMName, outputDQMName, modDicName):
     self.inputFileName = inputDQMName
     self.outputFileName = outputDQMName
     self.detIDsFileName = modDicName
-    self.dirs = dirs
-    self.dirsAliases = dirsAliases
-    
+
+    index = self.inputFileName.find('R000')
+    runNumber = self.inputFileName[index+4:index+10]
+
+    self.dirs = ['DQMData/Run %s/PixelPhase1/Run summary/Phase1_MechanicalView' % (runNumber),
+                 'DQMData/Run %s/PixelPhase1/Run summary/Tracks' % (runNumber)]
+    self.dirsAliases = {self.dirs[0]:"", self.dirs[1]: "T"}
+                
     self.inputFile = TFile(self.inputFileName)
     self.listOfNumHistograms = []
     self.availableNames = []
-    
+
     self.maxLadderToLayer = {6:1, 14:2, 22:3, 32:4}
     self.maxBladeToRing = {11:1, 17:2}
     
@@ -317,7 +317,7 @@ for i in range(1, len(sys.argv), 1):
   elif i == 3:
     outputFileName = sys.argv[i]
 
-readerObj = ModuleLvlValuesReader(inputFileName, outputFileName, detIDsFileName, baseRootDirs, baseRootDirsAliases)  
+readerObj = ModuleLvlValuesReader(inputFileName, outputFileName, detIDsFileName)
 readerObj.ReadHistograms()
 readerObj.CreateTree2()
 # readerObj.DumpData()
