@@ -201,7 +201,7 @@ class TH2PolyOfflineMaps:
     
   def __CreateTrackerBaseMap(self):
   
-    self.__BaseTrackerMap = TH2Poly("Summary", "Tracker Map", -10, 160, -70, 70)
+    self.__BaseTrackerMap = TH2Poly("Summary", "", -10, 160, -70, 70)
     # self.__BaseTrackerMap = TH2Poly("Summary", "Tracker Map", 0, 0, 0, 0)
     self.__BaseTrackerMap.SetFloat(1)
     self.__BaseTrackerMap.GetXaxis().SetTitle("")
@@ -241,11 +241,13 @@ class TH2PolyOfflineMaps:
     
   ############################################################################
 
-  def __init__(self, inputDQMName, outputDirName, minMaxFileName, modDicName, dirs, dirsAliases):
+  def __init__(self, inputDQMName, outputDirName, minMaxFileName, modDicName, runNumber, dirs, dirsAliases):
     self.inputFileName = inputDQMName
     self.outputDirName = outputDirName
     self.minMaxFileName = minMaxFileName
     self.detIDsFileName = modDicName
+    
+    self.runNumber = runNumber
     self.dirs = dirs
     self.dirsAliases = dirsAliases
     
@@ -363,7 +365,9 @@ class TH2PolyOfflineMaps:
     
       for mv in monitoredValues:
         currentHist = deepcopy(self.__BaseTrackerMap)
-        currentHist.SetTitle("Tracker Map for " + mv)
+        # currentHist.SetTitle("Run " + self.runNumber + ": Tracker Map for " + mv) // to make it compatible between ROOT v.
+        histoTitle = "Run " + self.runNumber + ": Tracker Map for " + mv
+        
         if "res" in mv:
           currentHist.SetMinimum(minResVal)
           currentHist.SetMaximum(maxResVal)
@@ -390,16 +394,21 @@ class TH2PolyOfflineMaps:
         
         c1 = TCanvas(mv, mv, plotWidth , plotHeight)
         # c1.SetLogz()
-        currentHist.Draw("AC COLZ L")
+        currentHist.Draw("AC COLZ L")        
         
-        # add some captions
+        # add some captions        
         txt = TText()
         txt.SetNDC();
         txt.SetTextFont(1)
         txt.SetTextColor(1)
-        txt.SetTextSize(0.03)
         txt.SetTextAlign(22)
         txt.SetTextAngle(0)
+        
+        # draw new-style title
+        txt.SetTextSize(0.05)
+        txt.DrawText(0.5, 0.95, histoTitle)
+        
+        txt.SetTextSize(0.03)
         
         txt.DrawText(0.5, 0.125, "-DISK")
         txt.DrawText(0.5, 0.075, "NUMBER ->")
@@ -433,7 +442,7 @@ baseRootDirsAliases = {baseRootDirs[0]:""
                     , baseRootDirs[1]:"T"
                     }
     
-readerObj = TH2PolyOfflineMaps(inputFileName, outputDirectoryName, minMaxFileName, detIDsFileName, baseRootDirs, baseRootDirsAliases)  
+readerObj = TH2PolyOfflineMaps(inputFileName, outputDirectoryName, minMaxFileName, detIDsFileName, deductedRunNumber, baseRootDirs, baseRootDirsAliases)  
 readerObj.ReadHistograms()
 # readerObj.DumpData()
 readerObj.PrintTrackerMaps()
