@@ -272,7 +272,7 @@ class ModuleLvlValuesReader:
       tree = TTree("tree", "readData")
       
       key = array("i", [0])
-      tree.Branch("detid", key, "detid/I")
+      tree.Branch("detid", key, "detid/i")
       
       dat = {}
       for k in self.internalData:
