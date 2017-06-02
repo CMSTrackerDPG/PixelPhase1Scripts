@@ -27,7 +27,7 @@ barrelLadderShift = [0, 14, 44, 90]
 forwardDiskXShift = [25, 75, 125]
 forwardDiskYShift = 45; # to make +DISK on top in the 'strip-like' layout
 
-plotWidth, plotHeight = 1500, 1300
+plotWidth, plotHeight = 3000, 2000
 extremeBinsNum = 20
 
 minNumVal = 1e-6
@@ -178,10 +178,11 @@ class TH2PolyOfflineMaps:
       for coord in xy:
         coordSpl = coord.split(",")
         if applyModuleRotation:
-          x.append(-float(coordSpl[0]) * sX + tX)
+          x.append(-(float(coordSpl[0]) * sX + tX))
+          y.append((float(coordSpl[1]) * sY + tY))
         else:
           x.append(float(coordSpl[0]) * sX + tX)
-        y.append(float(coordSpl[1]) * sY + tY)
+          y.append(float(coordSpl[1]) * sY + tY)
         verNum = verNum + 1
       #close polygon
       x.append(x[0])
@@ -395,10 +396,32 @@ class TH2PolyOfflineMaps:
         c1 = TCanvas(mv, mv, plotWidth , plotHeight)
         # c1.SetLogz()
         currentHist.Draw("AC COLZ L")        
+               
+        # draw axes (z, phi -> BARREL; x, y -> FORWARD)
+        ###################################################
+        
+        ### z arrow
+        arrow = TArrow(0.05, 27.0, 0.05, -30.0, 0.02, "|>")
+        arrow.SetLineWidth(4)
+        arrow.Draw()
+        ### phi arrow
+        phiArrow = TArrow(0.0, 27.0, 30.0, 27.0, 0.02, "|>")
+        phiArrow.SetLineWidth(4)
+        phiArrow.Draw()
+        ### x arror
+        xArrow = TArrow(25.0, 44.5, 50.0, 44.5, 0.02, "|>")
+        xArrow.SetLineWidth(4)
+        xArrow.Draw()
+        ### y arror
+        yArrow = TArrow(25.0, 44.5, 25.0, 69.5, 0.02, "|>")
+        yArrow.SetLineWidth(4)
+        yArrow.Draw()
+
+        ###################################################
         
         # add some captions        
-        txt = TText()
-        txt.SetNDC();
+        txt = TLatex()
+        txt.SetNDC()
         txt.SetTextFont(1)
         txt.SetTextColor(1)
         txt.SetTextAlign(22)
@@ -406,16 +429,21 @@ class TH2PolyOfflineMaps:
         
         # draw new-style title
         txt.SetTextSize(0.05)
-        txt.DrawText(0.5, 0.95, histoTitle)
+        txt.DrawLatex(0.5, 0.95, histoTitle)
         
         txt.SetTextSize(0.03)
         
-        txt.DrawText(0.5, 0.125, "-DISK")
-        txt.DrawText(0.5, 0.075, "NUMBER ->")
-        txt.DrawText(0.5, 0.875, "+DISK")
+        txt.DrawLatex(0.5, 0.125, "-DISK")
+        txt.DrawLatex(0.5, 0.075, "NUMBER ->")
+        txt.DrawLatex(0.5, 0.875, "+DISK")
+        
+        txt.DrawLatex(0.12, 0.35, "+z")
+        txt.DrawLatex(0.315, 0.665, "+phi")
+        txt.DrawLatex(0.38, 0.73, "+x")
+        txt.DrawLatex(0.235, 0.875, "+y")
         
         txt.SetTextAngle(90)
-        txt.DrawText(0.125, 0.5, "BARREL")
+        txt.DrawLatex(0.125, 0.5, "BARREL")
   
         #save to the png
         c1.Print(self.outputDirName + mv + ".png")
@@ -429,6 +457,10 @@ for i in range(1, len(sys.argv), 1):
   if i == 1:
     inputFileName = sys.argv[i]
   elif i == 2:
+    plotWidth = int(sys.argv[i])
+  elif i == 3:
+    plotHeight = int(sys.argv[i])
+  elif i == 4:
     detIDsFileName = sys.argv[i]
 
 deductedRunNumber = inputFileName.split("_R000")[1][0:6]
