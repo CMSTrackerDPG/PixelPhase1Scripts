@@ -46,9 +46,31 @@ if (isset($_POST["getCabling"]))
     
     if ($deltaTime > 3600)
     {
-      // exec("rm $fedDBInfoFile");
+      // // exec("rm $fedDBInfoFile");
+      
+      // $output = get_current_user(); //actually owner of the file...
+      // echo "$output </br>";
+      
+      // $output = trim(shell_exec('whoami')); // the server
+      // echo "$output </br>";
+      
+      // $output = shell_exec("tokens"); //list of tokens
+      // echo "$output </br>";
+      
+      // echo "Errors: ".`>&2 echo 'error'`."</br>";
+      
+      // shell_exec("unlog"); //remove tokens
+      
+      // $output = shell_exec("tokens"); //list of tokens
+      // echo "$output </br>";
+      
+      // echo `source /afs/cern.ch/cms/cmsset_default.sh 2>&1`; // see whether we can source ( if there are errors )
+      // echo "Errors: ".`>&2 echo 'error'`."</br>";
+      
       $output = shell_exec("bash runCMSSW.sh > $fedDBInfoFile");
       echo "<pre>$output</pre>";
+      
+      // echo `>&2 echo 'error'`;
     }
   }
   else{
@@ -99,7 +121,7 @@ if (isset($_POST["getCabling"]))
         
         <label for="option-three" class="pure-radio">
             <input id="option-three" type="radio" name="detid_fedid_searchOption" value="fedid" <?php if ($detid_fedid_searchOption == "fedid") echo "checked" ?>>
-            FED ID
+            FED ID (+ CHs)
         </label>
         
         <textarea name="entity_id"  placeholder="353309700"><?php echo $entity_id ?></textarea>

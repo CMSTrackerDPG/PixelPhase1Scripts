@@ -39,15 +39,24 @@ class PixelTrackerMap:
     with open(inputFileName, "r") as input:
       for line in input:
         lineSpl = line.strip().split(" ")
-        if lineSpl[0] not in self.inputModules:
+        
+        objID = lineSpl[0]
+        channels = []
+        
+        objIDSpl = objID.split("+") # FEDID + Ch: 1340+1/20
+        if (len(objIDSpl) > 1):
+          objID = objIDSpl[0] # objID = FEDID
+          channels = objIDSpl[1].strip().split("/") # channels: [1, 20]
+
+        if objID not in self.inputModules:
           if len(lineSpl) > 1:
             # self.inputModules.update({lineSpl[0] : "".join([lineSpl[1] + ", " + lineSpl[2] + ", " + lineSpl[3]])})
             R = str(random.randint(0, 256))
             G = str(random.randint(0, 256))
             B = str(random.randint(0, 256))
-            self.inputModules.update({lineSpl[0] : "".join([R + ", " + G + ", " + B])})
+            self.inputModules.update({objID : ["".join([R + ", " + G + ", " + B]), channels]})
           else:
-            self.inputModules.update({lineSpl[0] : "255, 0, 0"})        
+            self.inputModules.update({objID : ["255, 0, 0", channels]})        
           
     # print(self.inputModules)
   def DrawMap(self):
@@ -124,24 +133,37 @@ class PixelTrackerMap:
     rawId = line.strip().split(" ")[0]
     onlineId = line.strip().split(" ")[1]
     vertices = line.strip().split("\"")[1]
-    infoDic = {"detId" : rawId, "oid" : onlineId}
+    # infoDic = {"detId" : rawId, "oid" : onlineId}
+    
+    if rawId in self.cablingInfoDetID:
+      infoDic = self.cablingInfoDetID[rawId]
+      infoDic.update({"oid" : onlineId})
     
     if self.detid_fedid_searchOption == "fedid":
-      fedid = (self.cablingInfoDetID[rawId])["FED ID"]  # if CMSSW would not fire it will crash on the first barrel element
+      fedid = infoDic["FED ID"]  # if CMSSW would not fire it will crash on the first barrel element
       if fedid in self.inputModules:
-        fillColor = self.inputModules[fedid]          
+      
+        if len(self.inputModules[fedid][1]) > 0: # if user gave also channels as input we have to mark only them
+        
+          fedChs = infoDic["FED channel"].strip().split("/")
+          
+          for f in fedChs: 
+            if f in self.inputModules[fedid][1]: # if current module is connected to FCh which is on the user list than mark this as active
+              fillColor = self.inputModules[fedid][0]    
+              break
+          else:
+            fillColor = defaultFillColor
+          
+        else:
+          fillColor = self.inputModules[fedid][0]          
       else:
         fillColor = defaultFillColor
         
     else: #detid    
       if rawId in self.inputModules:
-        fillColor = self.inputModules[rawId]          
+        fillColor = self.inputModules[rawId][0]         
       else:
         fillColor = defaultFillColor
-      
-    if rawId in self.cablingInfoDetID:
-      infoDic = self.cablingInfoDetID[rawId]
-      infoDic.update({"oid" : onlineId})
       
     return vertices, fillColor, infoDic
   
