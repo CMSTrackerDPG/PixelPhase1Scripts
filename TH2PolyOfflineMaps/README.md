@@ -15,3 +15,10 @@ where the run number has to be able to be deducted from the input file name. Sup
 `*_R000######*` - run number is a 6-digit value
 
 Outputs (maps + text file) are saved inside `.OUT/`.
+
+IMPORTANT
+---------
+
+REALTIVE POSITIONING IS MESSY IN THE CURRENT VERION OF PYROOT. IT CAN CHANGE FROM VERSION TO VERSION, SO YOU HAVE TO ADJUST IT FOR YOUR NEEDS.
+
+ALSO LATEX FUNCTIONALITY IS NOT WORKING.

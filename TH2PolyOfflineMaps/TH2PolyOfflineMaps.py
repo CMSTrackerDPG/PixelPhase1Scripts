@@ -396,7 +396,11 @@ class TH2PolyOfflineMaps:
         c1 = TCanvas(mv, mv, plotWidth , plotHeight)
         # c1.SetLogz()
         currentHist.Draw("AC COLZ L")        
-               
+              
+        ### IMPORTANT - REALTIVE POSITIONING IS MESSY IN CURRENT VERION OF PYROOT
+        ### IT CAN CHANGE FROM VERSION TO VERSION, SO YOU HAVE TO ADJUST IT FOR YOUR NEEDS
+        ### !!!!!!!!!!!!!
+              
         # draw axes (z, phi -> BARREL; x, y -> FORWARD)
         ###################################################
         
@@ -438,7 +442,7 @@ class TH2PolyOfflineMaps:
         txt.DrawLatex(0.5, 0.875, "+DISK")
         
         txt.DrawLatex(0.12, 0.35, "+z")
-        txt.DrawLatex(0.315, 0.665, "+phi")
+        txt.DrawLatexNDC(0.315, 0.665, "+phi") # WAY TO FORCE IT TO DRAW LATEX CORRECTLY NOT FOUND ('#' DOESN'T WORK)
         txt.DrawLatex(0.38, 0.73, "+x")
         txt.DrawLatex(0.235, 0.875, "+y")
         
