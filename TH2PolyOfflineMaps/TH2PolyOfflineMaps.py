@@ -285,6 +285,8 @@ class TH2PolyOfflineMaps:
           # init internal data structure
           self.internalData.update({int(items[0]) : {}})
           
+      self.rawToOnlineDict = dict((v,k) for k,v in self.detDict.iteritems())    
+      
       self.__GroupHistograms()
       
       self.__CreateTrackerBaseMap()
@@ -376,9 +378,11 @@ class TH2PolyOfflineMaps:
           currentHist.SetMinimum(minNumVal)
         
         listOfVals = []
+        onlineName = ""
         for detId in self.internalData:
           val = (self.internalData[detId])[mv]
-          listOfVals.append([val, detId])
+          onlineName = self.rawToOnlineDict[detId]
+          listOfVals.append([val, detId, onlineName])
           currentHist.Fill(str(detId), val)
           
         listOfVals = sorted(listOfVals, key = lambda item: item[0])
@@ -387,11 +391,11 @@ class TH2PolyOfflineMaps:
         
         minMaxFile.write("MIN:\n")
         for i in range(extremeBinsNum):
-          minMaxFile.write("\t" + str(listOfVals[i][1]) + " " + str(listOfVals[i][0]) + "\n")
+          minMaxFile.write("\t" + str(listOfVals[i][1]) + " " + str(listOfVals[i][2]) + " " + str(listOfVals[i][0]) + "\n")
         
         minMaxFile.write("MAX:\n")
         for i in range(extremeBinsNum):
-          minMaxFile.write("\t" + str(listOfVals[-i - 1][1]) + " " + str(listOfVals[-i - 1][0]) + "\n")
+          minMaxFile.write("\t" + str(listOfVals[-i - 1][1]) + " " + str(listOfVals[-i - 1][2]) + " " + str(listOfVals[-i - 1][0]) + "\n")
         
         c1 = TCanvas(mv, mv, plotWidth , plotHeight)
         # c1.SetLogz()
