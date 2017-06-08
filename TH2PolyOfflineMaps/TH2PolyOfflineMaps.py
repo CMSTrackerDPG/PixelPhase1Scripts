@@ -10,6 +10,7 @@ gROOT.SetBatch()        # don't pop up canvases
 
 # Default values
 inputFileName = "DQM_V0013_R000292154__StreamExpressCosmics__Commissioning2017-Express-v1__DQMIO.root"
+limitsFileName = "limits.dat"
 outputDirectoryName = "OUT/"
 minMaxFileName = "minmax.out"
 detIDsFileName = "DATA/detids.dat"
@@ -29,10 +30,6 @@ forwardDiskYShift = 45; # to make +DISK on top in the 'strip-like' layout
 
 plotWidth, plotHeight = 3000, 2000
 extremeBinsNum = 20
-
-minNumVal = 1e-6
-minResVal = -0.1
-maxResVal = 0.1
 
 class TH2PolyOfflineMaps:
   
@@ -242,10 +239,11 @@ class TH2PolyOfflineMaps:
     
   ############################################################################
 
-  def __init__(self, inputDQMName, outputDirName, minMaxFileName, modDicName, runNumber, dirs, dirsAliases):
+  def __init__(self, inputDQMName, outputDirName, minMaxFileName, limitsFileName, modDicName, runNumber, dirs, dirsAliases):
     self.inputFileName = inputDQMName
     self.outputDirName = outputDirName
     self.minMaxFileName = minMaxFileName
+    self.limitsFileName = limitsFileName
     self.detIDsFileName = modDicName
     
     self.runNumber = runNumber
@@ -293,6 +291,25 @@ class TH2PolyOfflineMaps:
       
     else:
       print("Unable to open file %s" % (self.inputFileName))
+      
+    ### CREATE LIMITS DICTIONARY
+    
+    self.limitsDic = {}
+    with open(self.limitsFileName) as file:
+      for line in file:
+        if line.startswith("#"):
+          continue;
+        lineSpl = line.strip().split()
+        
+        if len(lineSpl) < 4:
+          continue
+        
+        currName = lineSpl[0]
+        zMin = float(lineSpl[1])
+        zMax = float(lineSpl[2])
+        isLog = False if lineSpl[3] == "0" else True
+        
+        self.limitsDic.update({currName : {"zMin" : zMin, "zMax" : zMax, "isLog" : isLog}})
   
   def ReadHistograms(self):
     if self.inputFile.IsOpen():
@@ -370,13 +387,17 @@ class TH2PolyOfflineMaps:
         currentHist = deepcopy(self.__BaseTrackerMap)
         # currentHist.SetTitle("Run " + self.runNumber + ": Tracker Map for " + mv) // to make it compatible between ROOT v.
         histoTitle = "Run " + self.runNumber + ": Tracker Map for " + mv
-        
-        if "res" in mv:
-          currentHist.SetMinimum(minResVal)
-          currentHist.SetMaximum(maxResVal)
-        else:
-          currentHist.SetMinimum(minNumVal)
-        
+          
+        applyLogScale = False
+        if mv in self.limitsDic:
+          limitsElem = self.limitsDic[mv]
+          
+          print(mv + " found in limits dictionary - applying custom limits...")
+          
+          currentHist.SetMinimum(limitsElem["zMin"])
+          currentHist.SetMaximum(limitsElem["zMax"])
+          applyLogScale = limitsElem["isLog"]
+          
         listOfVals = []
         onlineName = ""
         for detId in self.internalData:
@@ -398,7 +419,10 @@ class TH2PolyOfflineMaps:
           minMaxFile.write("\t" + str(listOfVals[-i - 1][1]) + " " + str(listOfVals[-i - 1][2]) + " " + str(listOfVals[-i - 1][0]) + "\n")
         
         c1 = TCanvas(mv, mv, plotWidth , plotHeight)
-        # c1.SetLogz()
+        
+        if applyLogScale:
+          c1.SetLogz()
+          
         currentHist.Draw("AC COLZ L")        
               
         ### IMPORTANT - REALTIVE POSITIONING IS MESSY IN CURRENT VERION OF PYROOT
@@ -469,6 +493,8 @@ for i in range(1, len(sys.argv), 1):
   elif i == 3:
     plotHeight = int(sys.argv[i])
   elif i == 4:
+    limitsFileName = sys.argv[i]
+  elif i == 5:
     detIDsFileName = sys.argv[i]
 
 deductedRunNumber = inputFileName.split("_R000")[1][0:6]
@@ -482,7 +508,7 @@ baseRootDirsAliases = {baseRootDirs[0]:""
                     , baseRootDirs[1]:"T"
                     }
     
-readerObj = TH2PolyOfflineMaps(inputFileName, outputDirectoryName, minMaxFileName, detIDsFileName, deductedRunNumber, baseRootDirs, baseRootDirsAliases)  
+readerObj = TH2PolyOfflineMaps(inputFileName, outputDirectoryName, minMaxFileName, limitsFileName, detIDsFileName, deductedRunNumber, baseRootDirs, baseRootDirsAliases)  
 readerObj.ReadHistograms()
 # readerObj.DumpData()
 readerObj.PrintTrackerMaps()

@@ -8,11 +8,19 @@ Moreover it looks for 20 minimum and maximum values in Tracker Map bins and prin
 How to use
 ----------
 
-`python TH2PolyOfflineMaps.py <name of the input file>`
+`python TH2PolyOfflineMaps.py <name of the input file> <width (px)> <height (px)> <limits file name>`
 
 where the run number has to be able to be deducted from the input file name. Supported format is as follows
 
-`*_R000######*` - run number is a 6-digit value
+`*_R000######*` - run number is a 6-digit value.
+
+Limits file is an optional file which can help to set custom and fixed z-axis range for a given map. Description of the map range consists of exactly 4 elements:
+  1. Map name
+  2. Minimum z value
+  3. Maximum z value
+  4. Set log axis (anything different than '0' is considered as True)
+  
+You can specify limits for different maps in different rows in this file. Empty lines and lines starting with '#' character are skipped during parsing stage. If you do not specify limits for a map which is created by the script it's range will be adjusted automatically.
 
 Outputs (maps + text file) are saved inside `.OUT/`.
 
