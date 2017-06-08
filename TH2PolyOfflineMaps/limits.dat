@@ -1,0 +1,8 @@
+### HIST_NAME MIN_VAL MAX_VAL IS_LOG
+
+#num_digis       0 10 0
+#num_clusters    0 10 0
+#Trechitsize_y   0 10000 1  
+#Trechitsize_x   0 10 1
+Tresidual_y     -0.1 0.1 0
+Tresidual_x     -0.1 0.1 0
