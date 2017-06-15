@@ -20,14 +20,14 @@ defaultFillColor = "255, 255, 255"
 #################################################################### PIXEL TRACKER MAP
 
 class PixelTrackerMap:
-  def __init__(self, cablingInfoDetID, cablingInfoFEDID, inputFileName, detid_fedid_searchOption):
+  def __init__(self, cablingInfoDetID, cablingInfoFEDID, inputFileName, searchOption):
     self.geometryFilenames = []
     self.inputModules = {}
     self.SVGStream = ""
     # self.cablingInfoDetID = pickle.load(open("DATA/cablingDic.pkl" ,"rb"))
     self.cablingInfoDetID = cablingInfoDetID
     self.cablingInfoFEDID = cablingInfoFEDID
-    self.detid_fedid_searchOption = detid_fedid_searchOption
+    self.searchOption = searchOption
     
     for i in range(maxPxBarrel):
       self.geometryFilenames.append("DATA/Geometry/vertices_barrel_" + str(i + 1))
@@ -139,7 +139,7 @@ class PixelTrackerMap:
       infoDic = self.cablingInfoDetID[rawId]
       infoDic.update({"oid" : onlineId})
     
-    if self.detid_fedid_searchOption == "fedid":
+    if self.searchOption == "fedid":
       fedid = infoDic["FED ID"]  # if CMSSW would not fire it will crash on the first barrel element
       if fedid in self.inputModules:
       
@@ -159,6 +159,13 @@ class PixelTrackerMap:
       else:
         fillColor = defaultFillColor
         
+    elif self.searchOption == "sectorid" and onlineId[0] == "B":
+      sector = onlineId.split("_")[2][3:]
+      if sector in self.inputModules:
+        fillColor = self.inputModules[sector][0]
+      else:
+        fillColor = defaultFillColor;
+    
     else: #detid    
       if rawId in self.inputModules:
         fillColor = self.inputModules[rawId][0]         
@@ -229,12 +236,12 @@ class PixelTrackerMap:
 
 inputName = "inputForPixelTrackerMap.dat"
 fedDBInfoFileName = ""
-detid_fedid_searchOption = "rawid"
+searchOption = "rawid"
 outDicTxtFileName = "/tmp/tmptmp.tmp"
 if len(sys.argv) > 1:
   inputName = sys.argv[1]
   fedDBInfoFileName = sys.argv[2]
-  detid_fedid_searchOption = sys.argv[3]
+  searchOption = sys.argv[3]
   outDicTxtFileName = sys.argv[4]
     
 ######################################################################## DIC BUILDER
@@ -320,5 +327,5 @@ with open(outDicTxtFileName, "w") as tmpFile:
 
 #################################################################### CALL MAIN STAFF 
 
-obj = PixelTrackerMap(pixelCablingInfoDic, pixelCablingInfoDicFed, inputName, detid_fedid_searchOption)
+obj = PixelTrackerMap(pixelCablingInfoDic, pixelCablingInfoDicFed, inputName, searchOption)
 obj.DrawMap()  

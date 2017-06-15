@@ -7,14 +7,14 @@ $execErr = "";
 
 $cablingTxt = "";
 
-$detid_fedid_searchOption = "rawid";
+$searchOption = "rawid";
 $outDicTxtFileName = "/tmp/pixelcablingweb_cablingInfo.dat";
 
 if (isset($_POST["getCabling"]))
 {
   $cablingTxt = $_POST["getCabling"];
   $entity_id = $_POST["entity_id"];
-  $detid_fedid_searchOption = $_POST["detid_fedid_searchOption"];
+  $searchOption = $_POST["searchOption"];
   
   $entity_id = str_replace("\r", " ", $entity_id);
 	$entity_id = str_replace("\n", "", $entity_id); 
@@ -81,7 +81,7 @@ if (isset($_POST["getCabling"]))
   
   // NOW CREATE XML FILE
   
-  $output = shell_exec("python PixelTrackerMap.py $inputFileName $fedDBInfoFile $detid_fedid_searchOption $outDicTxtFileName > $outputXMLFileName 2>&1");
+  $output = shell_exec("python PixelTrackerMap.py $inputFileName $fedDBInfoFile $searchOption $outDicTxtFileName > $outputXMLFileName 2>&1");
   // echo "<pre>$output</pre>";
 }
 ?>
@@ -115,13 +115,18 @@ if (isset($_POST["getCabling"]))
         <legend>Insert Pixel IDs to be marked:</legend>
         
         <label for="option-two" class="pure-radio">
-          <input id="option-two" type="radio" name="detid_fedid_searchOption" value="rawid" <?php if ($detid_fedid_searchOption == "rawid") echo "checked" ?> >
+          <input id="option-two" type="radio" name="searchOption" value="rawid" <?php if ($searchOption == "rawid") echo "checked" ?> >
             Det ID
         </label>
         
         <label for="option-three" class="pure-radio">
-            <input id="option-three" type="radio" name="detid_fedid_searchOption" value="fedid" <?php if ($detid_fedid_searchOption == "fedid") echo "checked" ?>>
+            <input id="option-three" type="radio" name="searchOption" value="fedid" <?php if ($searchOption == "fedid") echo "checked" ?>>
             FED ID (+ CHs)
+        </label>
+        
+        <label for="option-four" class="pure-radio">
+            <input id="option-four" type="radio" name="searchOption" value="sectorid" <?php if ($searchOption == "sectorid") echo "checked" ?>>
+            Barrel Sector
         </label>
         
         <textarea name="entity_id"  placeholder="353309700"><?php echo $entity_id ?></textarea>
