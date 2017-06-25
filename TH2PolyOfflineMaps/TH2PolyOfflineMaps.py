@@ -228,7 +228,7 @@ class TH2PolyOfflineMaps:
     # PLUS FORWARD
     for i in range(maxPxForward):
       with open(self.geometryFilenames[maxPxBarrel + maxPxForward + i], "r") as geoFile:
-        currForwardTranslateX = forwardDiskXShift[i - 1]
+        currForwardTranslateX = forwardDiskXShift[i]
         currForwardTranslateY = forwardDiskYShift
         
         self.__AddNamedBins(geoFile, currForwardTranslateX, currForwardTranslateY, 1, 1)

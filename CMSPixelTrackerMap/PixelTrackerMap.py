@@ -47,16 +47,23 @@ class PixelTrackerMap:
         if (len(objIDSpl) > 1):
           objID = objIDSpl[0] # objID = FEDID
           channels = objIDSpl[1].strip().split("/") # channels: [1, 20]
-
-        if objID not in self.inputModules:
+          channels = [int(x) for x in channels]
+          
+          #print(channels)
+        
+        if len(objID.strip()) == 0:
+          continue
+        
+        # print(objID)
+        if int(objID) not in self.inputModules:
           if len(lineSpl) > 1:
             # self.inputModules.update({lineSpl[0] : "".join([lineSpl[1] + ", " + lineSpl[2] + ", " + lineSpl[3]])})
             R = str(random.randint(0, 256))
             G = str(random.randint(0, 256))
             B = str(random.randint(0, 256))
-            self.inputModules.update({objID : ["".join([R + ", " + G + ", " + B]), channels]})
+            self.inputModules.update({int(objID) : ["".join([R + ", " + G + ", " + B]), channels]})
           else:
-            self.inputModules.update({objID : ["255, 0, 0", channels]})        
+            self.inputModules.update({int(objID) : ["255, 0, 0", channels]})   # ints save the day for different formatting styles (0- prefixes)....     
           
     # print(self.inputModules)
   def DrawMap(self):
@@ -140,7 +147,7 @@ class PixelTrackerMap:
       infoDic.update({"oid" : onlineId})
     
     if self.searchOption == "fedid":
-      fedid = infoDic["FED ID"]  # if CMSSW would not fire it will crash on the first barrel element
+      fedid = int(infoDic["FED ID"])  # if CMSSW would not fire it will crash on the first barrel element
       if fedid in self.inputModules:
       
         if len(self.inputModules[fedid][1]) > 0: # if user gave also channels as input we have to mark only them
@@ -148,7 +155,9 @@ class PixelTrackerMap:
           fedChs = infoDic["FED channel"].strip().split("/")
           
           for f in fedChs: 
-            if f in self.inputModules[fedid][1]: # if current module is connected to FCh which is on the user list than mark this as active
+            if len(f.strip()) == 0:
+              continue
+            if int(f) in self.inputModules[fedid][1]: # if current module is connected to FCh which is on the user list than mark this as active
               fillColor = self.inputModules[fedid][0]    
               break
           else:
@@ -160,15 +169,15 @@ class PixelTrackerMap:
         fillColor = defaultFillColor
         
     elif self.searchOption == "sectorid" and onlineId[0] == "B":
-      sector = onlineId.split("_")[2][3:]
+      sector = int(onlineId.split("_")[2][3:])
       if sector in self.inputModules:
         fillColor = self.inputModules[sector][0]
       else:
         fillColor = defaultFillColor;
     
     else: #detid    
-      if rawId in self.inputModules:
-        fillColor = self.inputModules[rawId][0]         
+      if int(rawId) in self.inputModules:
+        fillColor = self.inputModules[int(rawId)][0]         
       else:
         fillColor = defaultFillColor
       
