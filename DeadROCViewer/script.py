@@ -214,25 +214,25 @@ class HistogramManager:
   def saveHistograms(self):
     for hists in [self.barrelHists, self.forwardHists]:
       for hist in hists:
-        if hist.GetEntries():
-          c1 = ROOT.TCanvas(hist.GetName(), hist.GetName(), hRes, vRes)
-          if colorCoded:
-            hist.GetZaxis().SetRangeUser(0,5)
-            ROOT.gStyle.SetPalette(55)
-          elif pixelAlive:
-            hist.GetZaxis().SetRangeUser(0,4160)
-            ROOT.gStyle.SetPalette(70)
-          hist.Draw()
-          self.prettifyCanvas(hist)
-          colorString = ""
-          if colorCoded:
-            colorString = "_coded"
-          elif pixelAlive:
-            colorString = "_pixelalive"
-          if useFileSuffix:
-            c1.Print(hist.GetName() + colorString + "_" + inputFileName[:-4] + ".png")
-          else:
-            c1.Print(hist.GetName() + colorString + ".png")
+        # if hist.GetEntries():
+        c1 = ROOT.TCanvas(hist.GetName(), hist.GetName(), hRes, vRes)
+        if colorCoded:
+          hist.GetZaxis().SetRangeUser(0,5)
+          ROOT.gStyle.SetPalette(55)
+        elif pixelAlive:
+          hist.GetZaxis().SetRangeUser(0,4160)
+          ROOT.gStyle.SetPalette(70)
+        hist.Draw()
+        self.prettifyCanvas(hist)
+        colorString = ""
+        if colorCoded:
+          colorString = "_coded"
+        elif pixelAlive:
+          colorString = "_pixelalive"
+        if useFileSuffix:
+          c1.Print(hist.GetName() + colorString + "_" + inputFileName[:-4] + ".png")
+        else:
+          c1.Print(hist.GetName() + colorString + ".png")
             
 #####################################################
 
