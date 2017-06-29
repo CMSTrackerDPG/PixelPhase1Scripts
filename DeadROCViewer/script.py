@@ -217,7 +217,7 @@ class HistogramManager:
         # if hist.GetEntries():
         c1 = ROOT.TCanvas(hist.GetName(), hist.GetName(), hRes, vRes)
         if colorCoded:
-          hist.GetZaxis().SetRangeUser(0,5)
+          hist.GetZaxis().SetRangeUser(0,15)
           ROOT.gStyle.SetPalette(55)
         elif pixelAlive:
           hist.GetZaxis().SetRangeUser(0,4160)
@@ -337,6 +337,8 @@ def TranslateReasonStringBPix(theReasonStr):
     return 1
   elif theReasonStr == "vcthr":
     return 2
+  elif theReasonStr == "25":
+    return 8
   elif theReasonStr == "pixelalive":
     return 2
   elif theReasonStr == "iana":
@@ -350,8 +352,8 @@ def TranslateReasonStringBPix(theReasonStr):
   elif theReasonStr == "power":
     return 5
   else:
-    return 1
     print("Unrecognized part <%s>, the script is likely to crash..." % (theReasonStr))
+    return 1
 
 def TranslateReasonStringFPix(theReasonStr):
   if theReasonStr == "flaky":
@@ -363,9 +365,8 @@ def TranslateReasonStringFPix(theReasonStr):
   elif theReasonStr == "unknown":
     return 2
   else:
-    return 2
     print("Unrecognized part <%s>, the script is likely to crash..." % (theReasonStr))
-
+    return 2
     
 def GetOnlineBarrelCharacteristics(detElements, roc, reason="unknown"):
   onlinePart = int(detElements[1][1:]) if useNumberAsPartName else TranslatePartString(detElements[1][1:])
