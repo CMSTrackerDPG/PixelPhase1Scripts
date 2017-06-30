@@ -1,10 +1,14 @@
 #!/usr/bin/env python
 
 import sys
+import math
 from ROOT import *
 from copy import deepcopy
+from scipy import signal
 
 gROOT.SetBatch()        # don't pop up canvases
+
+
 
 class InefficientDeadROCs:
   ############################################################################
@@ -27,10 +31,11 @@ class InefficientDeadROCs:
             if newName.startswith("B"):
               layer = "B" + ((newName.split("_LYR"))[1])[0]
             else:
-              layer = ((newName.split("_D"))[1])[0]
-              if newName.startswith("FPix_Bm"):
-                layer = "-" + layer
-              layer = "F" + layer
+              continue  # do not care about FPIX
+              # layer = ((newName.split("_D"))[1])[0]
+              # if newName.startswith("FPix_Bm"):
+                # layer = "-" + layer
+              # layer = "F" + layer
             
             if layer in self.dicOfModuleHistograms:
               self.dicOfModuleHistograms[layer].append(th1)
@@ -52,12 +57,15 @@ class InefficientDeadROCs:
     # self.hotPixelThreshold = 4
     self.rocMaxCol = 52
     self.rocMaxRow = 80
-    self.relativeDiffTh = 0.3 # TO TUNE
     self.rocsInRow = 8
     self.rocsInCol = 2
     
+    self.thresholdDic = {"B1" : 1000, "B2" : 800, "B3" : 700, "B4" : 700}
+    
     self.inputFile = TFile(self.inputFileName)
     self.dicOfModuleHistograms = {}
+    
+    self.noisyPixelThreshold = 0.25
     
     if self.inputFile.IsOpen():
       print("%s opened successfully!" % (self.inputFileName))
@@ -76,93 +84,56 @@ class InefficientDeadROCs:
     with open(self.outputFileName, "w") as outputFile:
     
       for layer in self.dicOfModuleHistograms:
+        if layer not in self.thresholdDic:
+          continue
+        
         outputFile.write("-> " + layer + "\n\n")
-        
+        k = 0
         for hist in self.dicOfModuleHistograms[layer]:
-        
-          recentDoubleBin = [-1, -1, 0] # pattern recognition window
-          
+          print([hist.GetName(), k])
+          k = k + 1
           for rocNum in range(self.rocsInRow):
             startPixel = rocNum * self.rocMaxCol + 2
             endPixel = (rocNum + 1) * self.rocMaxCol # - 1 ???
             pixelArr = []
+            
+            # 1. PASS
             for x in range(startPixel, endPixel):
-              pixelArr.append(hist.GetBinContent(x))
+              pixelArr.append(hist.GetBinContent(x))  
               
-            meanOfPixels = sum(pixelArr) / len(pixelArr)
+            if len(pixelArr) == 0:
+              continue                                                # ROC down
+              
+            medFiltRes = signal.medfilt(pixelArr, 5) # 5 is obligatory to filter doublets!!!
+            
+            meanOfPixels = sum(medFiltRes) / len(medFiltRes)
+            maxMed = max(medFiltRes)
+            minMed = min(medFiltRes)          
+            # print( meanOfPixels, maxMed, minMed )
+            
+            # TODO: have to compare each bin value of 2 adjacent bins (making sure that also next one is not also lower than average)
+            # one hardcoded threshold does not work either (relative nor absolute)
             
             for x in range(startPixel, endPixel, 2):
-              currMean = (hist.GetBinContent(x+1) + hist.GetBinContent(x+2)) * 0.5
+              bin1valDiff = minMed - hist.GetBinContent(x+1)
+              bin2valDiff = minMed - hist.GetBinContent(x+2)
+              # WE ONLY WANT A SET OF TWO COLUMNS
+              bin0valDiff = minMed - hist.GetBinContent(x+0) 
+              bin3valDiff = minMed - hist.GetBinContent(x+3) 
               
-              if currMean < 0.9 * meanOfPixels:
+              currentDoubleBinThreshold = minMed / math.sqrt(meanOfPixels) # error in bin entry grows as sqrt(N)
               
+              # if bin1valDiff > self.thresholdDic[layer] and bin2valDiff > self.thresholdDic[layer] and not bin3valDiff > self.thresholdDic[layer]:
+              if bin1valDiff > currentDoubleBinThreshold  and bin2valDiff > currentDoubleBinThreshold and not bin3valDiff > currentDoubleBinThreshold and not bin0valDiff > currentDoubleBinThreshold:
+
                 rocCol = rocNum + 1
                 doubleColInRoc = ((x) % (self.rocMaxCol)) / 2 + 1
                 i = i + 1
                 
-                outputFile.write("%s,\tX: %d\tROC COLUMN: %d\tDOUBLE COL IN ROC: %d\n" % (hist.GetName(), x, rocCol, doubleColInRoc))
-                
-        
-          # for x in range(0, self.rocMaxCol * self.rocsInRow, 2):
-            # val = hist.GetBinContent(x + 1) + hist.GetBinContent(x + 2)
+                outputFile.write("%s,\tX: %d\tROC COLUMN: %d\tDOUBLE COL IN ROC: %d\tMIN IN ROC: %f\n" % (hist.GetName(), x, rocCol, doubleColInRoc, minMed))
               
-            # recentDoubleBin[2] = val
-            
-            # # print(x, val, recentDoubleBin)
-            
-            # # exlude init and div by 0
-            # if not -1 in recentDoubleBin and recentDoubleBin[0] != 0 and recentDoubleBin[2] != 0:
-              # relDeltaLeft = (recentDoubleBin[1] - recentDoubleBin[0]) #/ recentDoubleBin[0]
-              # relDeltaRight =(recentDoubleBin[1] - recentDoubleBin[2]) #/ recentDoubleBin[2]
-              
-              # if relDeltaLeft < 0 and abs(relDeltaLeft) > 800: #self.relativeDiffTh:
-                # if relDeltaRight < 0 and abs(relDeltaRight) > 800: #self.relativeDiffTh:
-                
-                  # rocCol = ((x + 1) // (self.rocMaxCol)) + 1
-                  # doubleColInRoc = ((x) % (self.rocMaxCol)) / 2 + 1
-                
-                  # i = i + 1
-                  # print("x: " + str(x) + "\trocCol: " + str(rocCol) + "\tdoubleColInRoc: " + str(doubleColInRoc) + "\nFound sequence " + str(recentDoubleBin) + " in " + hist.GetName())
-                  # outputFile.write("%s,\tX: %d\tROC COLUMN: %d\tDOUBLE COL IN ROC: %d\n" % (hist.GetName(), x, rocCol, doubleColInRoc))
-            
-            # # SHIFT VALUES
-            # recentDoubleBin[0] = recentDoubleBin[1]
-            # recentDoubleBin[1] = recentDoubleBin[2]
-              
-              # if val >= self.hotPixelThreshold:
-                
-                # tempXROC = (x / self.rocMaxCol) # 0,...,7
-                # tempYROC = (y / self.rocMaxRow) # 0, 1
-                
-                # tempXCoordInROC = x % self.rocMaxCol
-                # tempYCoordInROC = y % self.rocMaxRow
-                
-                # realXROC, realYROC = tempXROC, tempYROC
-                # xCoordInROC, yCoordInROC = tempXCoordInROC, tempYCoordInROC
-                
-                # rocNum = 0
-                
-                # if hist.GetName().find("BPix_Bp") != -1: #zero ROC is in top left corner
-                  # realYROC = 1 - tempYROC
-                  # if realYROC == 1:
-                    # rocNum = 15 - realXROC
-                    # xCoordInROC = self.rocMaxCol - 1 - xCoordInROC
-                  # else:
-                    # rocNum = realXROC
-                    # yCoordInROC = self.rocMaxRow - 1 - yCoordInROC
-                # else: # zero ROC is in bottom right corner
-                  # realXROC = 7 - tempXROC
-                  # if realYROC == 1:
-                    # rocNum = 15 - realXROC
-                    # yCoordInROC = self.rocMaxRow - 1 - yCoordInROC
-                  # else:
-                    # rocNum = realXROC
-                    # xCoordInROC = self.rocMaxCol - 1 - xCoordInROC
-                    
-                # outputFile.write("%s, [modCoord: (%d, %d); roc=%d rocCoord: (%d, %d)] : %d\n"%(hist.GetName(), x, y, rocNum, xCoordInROC, yCoordInROC, val))
-                
-                # return
-                
+              elif bin1valDiff < -self.noisyPixelThreshold * minMed:
+                outputFile.write("NOISY PIXEL %s\n" % (hist.GetName()))
                 
         outputFile.write("\n")        
     print("Number of inefficient double columns: %d"%(i))
