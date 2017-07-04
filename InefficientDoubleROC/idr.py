@@ -97,7 +97,6 @@ class InefficientDeadROCs:
     D = 0
     for i in range(xMin, xMax + 1):
       D = D + (i - meanOfX)**2
-      # print(D)
 
     a = 0
     for i in range(len(data)):
@@ -110,52 +109,74 @@ class InefficientDeadROCs:
     
   def __getROCData(self, hist, startPixel, endPixel, row, repeatFilter = 3, filterKernelSize = 5):
     pixelArr = []
+    suspiciouslyNoisyColumnsInROC = []
+    
     for x in range(startPixel, endPixel):
-      columnSum = 0
-      for y in range(row * self.rocMaxRow, (row + 1) * self.rocMaxRow):
-        columnSum = columnSum + hist.GetBinContent(x, y + 1) # bins numeration starts from 1
+      
+      columnPixels = [hist.GetBinContent(x, y + 1) for y in range(row * self.rocMaxRow, (row + 1) * self.rocMaxRow)]
+      columnSum = sum(columnPixels)
+      
+      columnMean = columnSum / len(columnPixels)
+      for i in range(len(columnPixels)):
+        if columnPixels[i] > 8 * columnMean:
+          # col = (startPixel % self.rocMaxCol) + 1
+          
+          suspiciouslyNoisyColumnsInROC.append(x)
+          
+          # print("WARNING:\t %s : %dx%d:%d may contain NOISY PIXELS instead of NOISY COLUMNS" % (hist.GetName(), col, row + 1, startPixel + i))
+          break
+      
       pixelArr.append(columnSum)  
       
     if len(pixelArr) == 0:
-      return None, None                                             # ROC down
+      return None, None, None                                             # ROC down
     
     medFiltRes = pixelArr
     for i in range(repeatFilter):
       medFiltRes = signal.medfilt(medFiltRes, filterKernelSize) # 5 is obligatory to filter doublets!!!
       
-    return pixelArr, medFiltRes
+    return pixelArr, medFiltRes, suspiciouslyNoisyColumnsInROC
     
     
-  def __determineBarrelNoise(self, noiseFile, histName, meanOfPixels, maxMed, val, pos, rocCol, rocRow):
+  def __determineBarrelNoise(self, noiseFile, suspiciouslyNoisyColumnsInROC, histName, meanOfPixels, maxMed, val, pos, rocCol, rocRow):
+    noisyROC = False;
     if meanOfPixels < 200:
-      print("Very low mean occupancy: %f in ROC %s:COL%dxROC%d\nSkipping noisy ROC calculation" % (meanOfPixels, histName, rocCol, rocRow) )
+      print("Very low mean occupancy: %f in ROC %s:COL%dxROC%d...\tSkipping noisy ROC calculation" % (meanOfPixels, histName, rocCol, rocRow) )
+      noisyROC = True
       
-    elif val > 1.5 * maxMed:
-      colInRoc = (pos) % (self.rocMaxCol) + 1      
-      noiseFile.write("%s,\tX: %d\tROC COLUMN: %d\tROC ROW: %d\tCOL IN ROC: %d\tMEAN IN ROC: %f\tVAL: %f\n" % (histName, pos, rocCol, rocRow, colInRoc, meanOfPixels, val))
-      
-      return 1
-    return 0
+    elif val > 1.35 * maxMed:
+      if pos not in suspiciouslyNoisyColumnsInROC:
+        colInRoc = (pos) % (self.rocMaxCol) + 1   
+        noiseFile.write("%s,\tX: %d\tROC COLUMN: %d\tROC ROW: %d\tCOL IN ROC: %d\tMEAN IN ROC: %f\tVAL: %f\n" % (histName, pos, rocCol, rocRow, colInRoc, meanOfPixels, val))
+        return 1, noisyROC
+      else:
+        print("WARNING: rejecting %s %dx%d:%d as being affected by a few noisy pixel(s)" % (histName, rocCol, rocRow, pos))
+    return 0, noisyROC
     
-  def __determineEndcapNoise(self, noiseFile, histName, meanOfPixels, linVal, val, pos, rocCol, rocRow):
+  def __determineEndcapNoise(self, noiseFile, suspiciouslyNoisyColumnsInROC, histName, meanOfPixels, linVal, val, pos, rocCol, rocRow):
+    noisyROC = False;
     if meanOfPixels < 200:
-      print("Very low mean occupancy: %f in ROC %s:\tCOL%dxROC%d\nSkipping noisy ROC calculation" % (meanOfPixels, histName, rocCol, rocRow) )
+      print("Very low mean occupancy: %f in ROC %s:\tCOL%dxROC%d...\tSkipping noisy ROC calculation" % (meanOfPixels, histName, rocCol, rocRow) )
+      noisyROC = True
     
     elif val > 1.5 * linVal:
-      colInRoc = (pos) % (self.rocMaxCol) + 1  
-      noiseFile.write("%s,\tX: %d\tROC COLUMN: %d\tROC ROW: %d\tCOL IN ROC: %d\tMEAN IN ROC: %f\tVAL: %f\tLINVAL: %f\n" % (histName, pos, rocCol, rocRow, colInRoc, meanOfPixels, val, linVal))
-        
-      return 1
-    return 0
+      if pos not in suspiciouslyNoisyColumnsInROC:
+        colInRoc = (pos) % (self.rocMaxCol) + 1  
+        noiseFile.write("%s,\tX: %d\tROC COLUMN: %d\tROC ROW: %d\tCOL IN ROC: %d\tMEAN IN ROC: %f\tVAL: %f\tLINVAL: %f\n" % (histName, pos, rocCol, rocRow, colInRoc, meanOfPixels, val, linVal))
+        return 1, noisyROC
+      else:
+        print("WARNING: rejecting %s %dx%d:%d as being affected by a few noisy pixel(s)" % (histName, rocCol, rocRow, pos))
+    return 0, noisyROC
     
-  def __determineBarrelDColInefficiencyAndNoise(self, medFiltRes, histName, pixelArr, startPixel, rocCol, rocRow, outputFile, noiseFile):
+  def __determineBarrelDColInefficiencyAndNoise(self, medFiltRes, histName, pixelArr, startPixel, rocCol, rocRow, outputFile, suspiciouslyNoisyColumnsInROC, noiseFile):
     meanOfPixels = sum(medFiltRes) / len(medFiltRes)
     maxMed = max(medFiltRes)
     minMed = min(medFiltRes)          
     # print( meanOfPixels, maxMed, minMed )
     
     doubleDeadCols = 0
-    noisyCols = 0
+    noisyColsNum = 0
+    noisyROC = 0
     
     # for x in range(startPixel, endPixel, 1):
     for i in range(1, len(pixelArr) - 2):
@@ -175,15 +196,21 @@ class InefficientDeadROCs:
         outputFile.write("%s,\tX: %d-%d\tROC COLUMN: %d\tROC ROW: %d\tDOUBLE COL IN ROC: %d\tTH: %f\tMIN IN ROC: %f\tBINVAL: %f\n" % (histName, startPixel + (i + 0), startPixel + (i + 1), rocCol, rocRow, doubleColInRoc, currentDoubleBinThreshold, minMed, pixelArr[i]))
 
       # HANDLE NOISY PIXELS
-      noisyCols = noisyCols + self.__determineBarrelNoise(noiseFile, histName, meanOfPixels, maxMed, pixelArr[i], startPixel + i, rocCol, rocRow)
+      if noisyROC == True:  #don't go inside if noisyness was determined already
+        continue
+      
+      res = self.__determineBarrelNoise(noiseFile, suspiciouslyNoisyColumnsInROC, histName, meanOfPixels, maxMed, pixelArr[i], startPixel + i, rocCol, rocRow)
+      noisyColsNum, noisyROC = noisyColsNum + res[0], res[1]
       if i == len(pixelArr) - 3: #  CHECK NOISYNESS IN THE RIGHTMOST INNER COL
-        noisyCols = noisyCols + self.__determineBarrelNoise(noiseFile, histName, meanOfPixels, maxMed, pixelArr[i + 1], startPixel + i + 1, rocCol, rocRow)
+        res = self.__determineBarrelNoise(noiseFile, suspiciouslyNoisyColumnsInROC, histName, meanOfPixels, maxMed, pixelArr[i + 1], startPixel + i + 1, rocCol, rocRow)
+        noisyColsNum, noisyROC = noisyColsNum + res[0], res[1]
         
-    return doubleDeadCols, noisyCols
+    return doubleDeadCols, noisyColsNum
   
-  def __determineEndcapDColInefficiencyAndNoise(self, medFiltRes, histName, pixelArr, startPixel, rocCol, rocRow, outputFile, noiseFile):
+  def __determineEndcapDColInefficiencyAndNoise(self, medFiltRes, histName, pixelArr, startPixel, rocCol, rocRow, outputFile, suspiciouslyNoisyColumnsInROC, noiseFile):
     doubleDeadCols = 0
-    noisyCols = 0
+    noisyColsNum = 0
+    noisyROC = 0
     
     useLin = True
     # <D> might be used for high noise ROC recognition
@@ -216,7 +243,7 @@ class InefficientDeadROCs:
       try:
         currentDoubleBinThreshold = math.sqrt((linVal1 + linVal2) * 0.5) * 8
       except:
-        print(a, b, startPixel, i, linVal1, linVal2)
+        # print(a, b, startPixel, i, linVal1, linVal2)
         continue
       
       if bin1valDiff > currentDoubleBinThreshold and bin2valDiff > currentDoubleBinThreshold and not bin3valDiff > currentDoubleBinThreshold and not bin0valDiff > currentDoubleBinThreshold:
@@ -227,15 +254,20 @@ class InefficientDeadROCs:
         outputFile.write("%s,\tX: %d-%d\tROC COLUMN: %d\tROC ROW: %d\tDOUBLE COL IN ROC: %d\tTH: %f\tLINVAL: %f\tBINVAL: %f\n" % (histName, startPixel + (i + 0), startPixel + (i + 1), rocCol, rocRow, doubleColInRoc, currentDoubleBinThreshold, linVal1, pixelArr[i]))
 
       # HANDLE NOISY PIXELS
-      noisyCols = noisyCols + self.__determineEndcapNoise(noiseFile, histName, meanOfPixels, linVal1, pixelArr[i], i + startPixel, rocCol, rocRow)
+      if noisyROC == True:  #don't go inside if noisyness was determined already
+        continue
+      
+      res = self.__determineEndcapNoise(noiseFile, suspiciouslyNoisyColumnsInROC, histName, meanOfPixels, linVal1, pixelArr[i], i + startPixel, rocCol, rocRow)
+      noisyColsNum, noisyROC = noisyColsNum + res[0], res[1]
       if i == len(pixelArr) - 3: #  CHECK NOISYNESS IN THE RIGHTMOST INNER COL
-        noisyCols = noisyCols + self.__determineEndcapNoise(noiseFile, histName, meanOfPixels, linVal2, pixelArr[i + 1], i + 1 + startPixel, rocCol, rocRow)
+        res = self.__determineEndcapNoise(noiseFile, suspiciouslyNoisyColumnsInROC, histName, meanOfPixels, linVal2, pixelArr[i + 1], i + 1 + startPixel, rocCol, rocRow)
+        noisyColsNum, noisyROC = noisyColsNum + res[0], res[1]
     
-    return doubleDeadCols, noisyCols
+    return doubleDeadCols, noisyColsNum
       
   def ReadHistograms(self):      
     doubleDeadCols = 0
-    noisyCols = 0
+    noisyColsNum = 0
     
     with open(self.noiseOutputFileName, "w") as noiseFile: 
     
@@ -257,25 +289,25 @@ class InefficientDeadROCs:
                 
                 rocCol = rocNum + 1
                 
-                pixelArr, medFiltRes = self.__getROCData(hist, startPixel, endPixel, row)
+                pixelArr, medFiltRes, suspiciouslyNoisyColumnsInROC = self.__getROCData(hist, startPixel, endPixel, row)
                 if pixelArr == None:
                   continue
                 
                 # print(len(pixelArr))
                 
                 if "F" not in layer:
-                  result = self.__determineBarrelDColInefficiencyAndNoise(medFiltRes, hist.GetName(), pixelArr, startPixel, rocCol, row + 1, outputFile, noiseFile)
+                  result = self.__determineBarrelDColInefficiencyAndNoise(medFiltRes, hist.GetName(), pixelArr, startPixel, rocCol, row + 1, outputFile, suspiciouslyNoisyColumnsInROC, noiseFile)
                 else:
-                  result = self.__determineEndcapDColInefficiencyAndNoise(medFiltRes, hist.GetName(), pixelArr, startPixel, rocCol, row + 1, outputFile, noiseFile)
+                  result = self.__determineEndcapDColInefficiencyAndNoise(medFiltRes, hist.GetName(), pixelArr, startPixel, rocCol, row + 1, outputFile, suspiciouslyNoisyColumnsInROC, noiseFile)
                   
                 doubleDeadCols = doubleDeadCols + result[0]
-                noisyCols = noisyCols + result[1]                
+                noisyColsNum = noisyColsNum + result[1]                
                   
           outputFile.write("\n")    
           noiseFile.write("\n")
           
     print("Number of inefficient double columns: %d"%(doubleDeadCols))
-    print("Number of noisy cols: %d"%(noisyCols))
+    print("Number of noisy cols: %d"%(noisyColsNum))
       
       
 #--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--
