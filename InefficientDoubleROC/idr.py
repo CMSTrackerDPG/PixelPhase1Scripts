@@ -15,10 +15,10 @@ class InefficientDeadROCs:
   
     for obj in dir.GetListOfKeys():
       if not obj.IsFolder():
-        if obj.ReadObjectAny(TClass.GetClass("TH1")):
+        if obj.ReadObjectAny(TClass.GetClass("TH2")):
           th1 = deepcopy(obj.ReadObj())
           name = th1.GetName()
-          if name.startswith(self.lookForStr) and not name.startswith(self.lookForStr + "per"): #take only module lvl plots
+          if name.startswith(self.lookForStr): #take only module lvl plots
             # print(''.join([dir.GetPath(), '/', name]))
             newName = name.split(self.lookForStr)[1]
             th1.SetName(newName)
@@ -29,7 +29,6 @@ class InefficientDeadROCs:
             if newName.startswith("B"):
               layer = "B" + ((newName.split("_LYR"))[1])[0]
             else:
-              # continue  # do not care about FPIX
               layer = ((newName.split("_D"))[1])[0]
               if newName.startswith("FPix_Bm"):
                 layer = "-" + layer
@@ -39,8 +38,6 @@ class InefficientDeadROCs:
               self.dicOfModuleHistograms[layer].append(th1)
             else:
               self.dicOfModuleHistograms.update({layer : [th1]})        
-              
-            # break; # for speed...
       else:
         self.__TraverseDirTree(obj.ReadObj())
         
@@ -51,9 +48,8 @@ class InefficientDeadROCs:
     self.noiseOutputFileName = noiseOutputFileName
     self.dirs = dirs
     
-    self.lookForStr = "digi_occupancy_per_col_"
+    self.lookForStr = "digi_occupancy_per_col_per_row_"
     
-    # self.hotPixelThreshold = 4
     self.rocMaxCol = 52
     self.rocMaxRow = 80
     self.rocsInRow = 8
@@ -111,6 +107,131 @@ class InefficientDeadROCs:
     b = meanOfY - a * meanOfX
     
     return a, b, D
+    
+  def __getROCData(self, hist, startPixel, endPixel, row, repeatFilter = 3, filterKernelSize = 5):
+    pixelArr = []
+    for x in range(startPixel, endPixel):
+      columnSum = 0
+      for y in range(row * self.rocMaxRow, (row + 1) * self.rocMaxRow):
+        columnSum = columnSum + hist.GetBinContent(x, y + 1) # bins numeration starts from 1
+      pixelArr.append(columnSum)  
+      
+    if len(pixelArr) == 0:
+      return None, None                                             # ROC down
+    
+    medFiltRes = pixelArr
+    for i in range(repeatFilter):
+      medFiltRes = signal.medfilt(medFiltRes, filterKernelSize) # 5 is obligatory to filter doublets!!!
+      
+    return pixelArr, medFiltRes
+    
+    
+  def __determineBarrelNoise(self, noiseFile, histName, meanOfPixels, maxMed, val, pos, rocCol, rocRow):
+    if meanOfPixels < 200:
+      print("Very low mean occupancy: %f in ROC %s:COL%dxROC%d\nSkipping noisy ROC calculation" % (meanOfPixels, histName, rocCol, rocRow) )
+      
+    elif val > 1.5 * maxMed:
+      colInRoc = (pos) % (self.rocMaxCol) + 1      
+      noiseFile.write("%s,\tX: %d\tROC COLUMN: %d\tROC ROW: %d\tCOL IN ROC: %d\tMEAN IN ROC: %f\tVAL: %f\n" % (histName, pos, rocCol, rocRow, colInRoc, meanOfPixels, val))
+      
+      return 1
+    return 0
+    
+  def __determineEndcapNoise(self, noiseFile, histName, meanOfPixels, linVal, val, pos, rocCol, rocRow):
+    if meanOfPixels < 200:
+      print("Very low mean occupancy: %f in ROC %s:\tCOL%dxROC%d\nSkipping noisy ROC calculation" % (meanOfPixels, histName, rocCol, rocRow) )
+    
+    elif val > 1.5 * linVal:
+      colInRoc = (pos) % (self.rocMaxCol) + 1  
+      noiseFile.write("%s,\tX: %d\tROC COLUMN: %d\tROC ROW: %d\tCOL IN ROC: %d\tMEAN IN ROC: %f\tVAL: %f\tLINVAL: %f\n" % (histName, pos, rocCol, rocRow, colInRoc, meanOfPixels, val, linVal))
+        
+      return 1
+    return 0
+    
+  def __determineBarrelDColInefficiencyAndNoise(self, medFiltRes, histName, pixelArr, startPixel, rocCol, rocRow, outputFile, noiseFile):
+    meanOfPixels = sum(medFiltRes) / len(medFiltRes)
+    maxMed = max(medFiltRes)
+    minMed = min(medFiltRes)          
+    # print( meanOfPixels, maxMed, minMed )
+    
+    doubleDeadCols = 0
+    noisyCols = 0
+    
+    # for x in range(startPixel, endPixel, 1):
+    for i in range(1, len(pixelArr) - 2):
+      bin1valDiff = minMed - pixelArr[i + 0]#hist.GetBinContent(x+0)
+      bin2valDiff = minMed - pixelArr[i + 1]
+      # WE ONLY WANT A SET OF TWO COLUMNS SO ADJACENT COLUMNS HAVE TO BE NORMAL
+      bin0valDiff = minMed - pixelArr[i - 1]
+      bin3valDiff = minMed - pixelArr[i + 2]
+      
+      currentDoubleBinThreshold = minMed / math.sqrt(meanOfPixels) * 2.5 # error in bin entry grows as sqrt(N)
+                        
+      if bin1valDiff > currentDoubleBinThreshold and bin2valDiff > currentDoubleBinThreshold and not bin3valDiff > currentDoubleBinThreshold and not bin0valDiff > currentDoubleBinThreshold:
+
+        doubleColInRoc = ((i + startPixel) % (self.rocMaxCol)) // 2 + 1
+        doubleDeadCols = doubleDeadCols + 1
+        
+        outputFile.write("%s,\tX: %d-%d\tROC COLUMN: %d\tROC ROW: %d\tDOUBLE COL IN ROC: %d\tTH: %f\tMIN IN ROC: %f\tBINVAL: %f\n" % (histName, startPixel + (i + 0), startPixel + (i + 1), rocCol, rocRow, doubleColInRoc, currentDoubleBinThreshold, minMed, pixelArr[i]))
+
+      # HANDLE NOISY PIXELS
+      noisyCols = noisyCols + self.__determineBarrelNoise(noiseFile, histName, meanOfPixels, maxMed, pixelArr[i], startPixel + i, rocCol, rocRow)
+      if i == len(pixelArr) - 3: #  CHECK NOISYNESS IN THE RIGHTMOST INNER COL
+        noisyCols = noisyCols + self.__determineBarrelNoise(noiseFile, histName, meanOfPixels, maxMed, pixelArr[i + 1], startPixel + i + 1, rocCol, rocRow)
+        
+    return doubleDeadCols, noisyCols
+  
+  def __determineEndcapDColInefficiencyAndNoise(self, medFiltRes, histName, pixelArr, startPixel, rocCol, rocRow, outputFile, noiseFile):
+    doubleDeadCols = 0
+    noisyCols = 0
+    
+    useLin = True
+    # <D> might be used for high noise ROC recognition
+    a, b, D = self.__lmsLin(medFiltRes, startPixel, len(medFiltRes) + startPixel)
+                  
+    meanOfPixels = sum(medFiltRes) / len(medFiltRes)
+    
+    # for x in range(startPixel, endPixel, 1):
+    for i in range(1, len(pixelArr) - 2):
+      
+      if useLin == True:
+        linVal1 = a * (i + startPixel + 0) + b
+        linVal2 = a * (i + startPixel + 1) + b
+        
+        linVal0 = a * (i + startPixel - 1) + b
+        linVal3 = a * (i + startPixel + 2) + b
+      else:
+        linVal1 = b * math.exp(a * (i + startPixel + 0))
+        linVal2 = b * math.exp(a * (i + startPixel + 1))
+                               
+        linVal0 = b * math.exp(a * (i + startPixel - 1))
+        linVal3 = b * math.exp(a * (i + startPixel + 2))
+      
+      bin1valDiff = linVal1 - pixelArr[i + 0]
+      bin2valDiff = linVal2 - pixelArr[i + 1]
+      # WE ONLY WANT A SET OF TWO COLUMNS SO ADJACENT COLUMNS HAVE TO BE NORMAL
+      bin0valDiff = linVal0 - pixelArr[i - 1]
+      bin3valDiff = linVal3 - pixelArr[i + 2] 
+         
+      try:
+        currentDoubleBinThreshold = math.sqrt((linVal1 + linVal2) * 0.5) * 8
+      except:
+        print(a, b, startPixel, i, linVal1, linVal2)
+        continue
+      
+      if bin1valDiff > currentDoubleBinThreshold and bin2valDiff > currentDoubleBinThreshold and not bin3valDiff > currentDoubleBinThreshold and not bin0valDiff > currentDoubleBinThreshold:
+
+        doubleColInRoc = ((i + startPixel) % (self.rocMaxCol)) // 2 + 1
+        doubleDeadCols = doubleDeadCols + 1
+        
+        outputFile.write("%s,\tX: %d-%d\tROC COLUMN: %d\tROC ROW: %d\tDOUBLE COL IN ROC: %d\tTH: %f\tLINVAL: %f\tBINVAL: %f\n" % (histName, startPixel + (i + 0), startPixel + (i + 1), rocCol, rocRow, doubleColInRoc, currentDoubleBinThreshold, linVal1, pixelArr[i]))
+
+      # HANDLE NOISY PIXELS
+      noisyCols = noisyCols + self.__determineEndcapNoise(noiseFile, histName, meanOfPixels, linVal1, pixelArr[i], i + startPixel, rocCol, rocRow)
+      if i == len(pixelArr) - 3: #  CHECK NOISYNESS IN THE RIGHTMOST INNER COL
+        noisyCols = noisyCols + self.__determineEndcapNoise(noiseFile, histName, meanOfPixels, linVal2, pixelArr[i + 1], i + 1 + startPixel, rocCol, rocRow)
+    
+    return doubleDeadCols, noisyCols
       
   def ReadHistograms(self):      
     doubleDeadCols = 0
@@ -121,130 +242,38 @@ class InefficientDeadROCs:
       with open(self.outputFileName, "w") as outputFile:
       
         for layer in self.dicOfModuleHistograms:
-          # if layer not in self.thresholdDic:
-            # continue
           
           outputFile.write("-> " + layer + "\n\n")
           noiseFile.write("-> " + layer + "\n\n")
           
-          k = 0
-          for hist in self.dicOfModuleHistograms[layer]:
-            print([hist.GetName(), k])
-            k = k + 1
-            for rocNum in range(self.rocsInRow):
-              startPixel = rocNum * self.rocMaxCol + 2
-              endPixel = (rocNum + 1) * self.rocMaxCol # - 1 ???
-              pixelArr = []
-              
-              rocCol = rocNum + 1
-              
-              # 1. PASS
-              for x in range(startPixel, endPixel):
-                pixelArr.append(hist.GetBinContent(x))  
+          # if "F" in layer:
+            # continue
+          
+          for hist in self.dicOfModuleHistograms[layer]:          
+            for row in range(2):          
+              for rocNum in range(self.rocsInRow):
+                startPixel = rocNum * self.rocMaxCol + 1
+                endPixel = (rocNum + 1) * self.rocMaxCol + 1 # - 1 ???
                 
-              if len(pixelArr) == 0:
-                continue                                                # ROC down
-              
-              medFiltRes = pixelArr
-              for i in range(3):
-                medFiltRes = signal.medfilt(medFiltRes, 5) # 5 is obligatory to filter doublets!!!
+                rocCol = rocNum + 1
                 
-              # now calc LMS coefficents
-              
-              if "F" not in layer:
-                meanOfPixels = sum(medFiltRes) / len(medFiltRes)
-                maxMed = max(medFiltRes)
-                minMed = min(medFiltRes)          
-                # print( meanOfPixels, maxMed, minMed )
+                pixelArr, medFiltRes = self.__getROCData(hist, startPixel, endPixel, row)
+                if pixelArr == None:
+                  continue
                 
-                # TODO: have to compare each bin value of 2 adjacent bins (making sure that also next one is not also lower than average)
-                # one hardcoded threshold does not work either (relative nor absolute)
+                # print(len(pixelArr))
                 
-                for x in range(startPixel, endPixel, 1):
-                  bin1valDiff = minMed - hist.GetBinContent(x+0)
-                  bin2valDiff = minMed - hist.GetBinContent(x+1)
-                  # WE ONLY WANT A SET OF TWO COLUMNS SO ADJACENT COLUMNS HAVE TO BE NORMAL
-                  bin0valDiff = minMed - hist.GetBinContent(x-1) 
-                  bin3valDiff = minMed - hist.GetBinContent(x+2) 
+                if "F" not in layer:
+                  result = self.__determineBarrelDColInefficiencyAndNoise(medFiltRes, hist.GetName(), pixelArr, startPixel, rocCol, row + 1, outputFile, noiseFile)
+                else:
+                  result = self.__determineEndcapDColInefficiencyAndNoise(medFiltRes, hist.GetName(), pixelArr, startPixel, rocCol, row + 1, outputFile, noiseFile)
                   
-                  currentDoubleBinThreshold = minMed / math.sqrt(meanOfPixels) * 2.5 # error in bin entry grows as sqrt(N)
-                                    
-                  # if bin1valDiff > self.thresholdDic[layer] and bin2valDiff > self.thresholdDic[layer] and not bin3valDiff > self.thresholdDic[layer]:
-                  if bin1valDiff > currentDoubleBinThreshold  and bin2valDiff > currentDoubleBinThreshold and not bin3valDiff > currentDoubleBinThreshold and not bin0valDiff > currentDoubleBinThreshold:
-
-                    doubleColInRoc = ((x) % (self.rocMaxCol)) // 2 + 1
-                    doubleDeadCols = doubleDeadCols + 1
-                    
-                    outputFile.write("%s,\tX: %d-%d\tROC COLUMN: %d\tDOUBLE COL IN ROC: %d\tTH: %f\tMIN IN ROC: %f\tBINVAL: %f\n" % (hist.GetName(), x+0, x+1, rocCol, doubleColInRoc, currentDoubleBinThreshold, minMed, hist.GetBinContent(x+0)))
-
-                  # HANDLE NOISY PIXELS
-                  if maxMed - hist.GetBinContent(x) < -self.noisyPixelThreshold * maxMed:
-                    colInRoc = (x) % (self.rocMaxCol) + 1
-                    
-                    noisyCols = noisyCols + 1
-                    
-                    noiseFile.write("%s,\tX: %d\tROC COLUMN: %d\tCOL IN ROC: %d\tMEAN IN ROC: %f\tVAL: %f\n" % (hist.GetName(), x, rocCol, colInRoc, meanOfPixels, hist.GetBinContent(x)))
-              else:
-                useLin = True
-                # <D> might be used for high noise ROC recognition
-                a, b, D = self.__lmsLin(medFiltRes, startPixel, endPixel)
-                
-                # if 0 in medFiltRes:
-                  # useLin = True
-                  # a, b = self.__lmsLin(medFiltRes, startPixel, endPixel)
-                # else:
-                  # a, b = self.__lmsExp(medFiltRes, startPixel, endPixel)
-                  # if b > 1000000:  # it becomes more and more linear
-                    # useLin = True
-                    # a, b = self.__lmsLin(medFiltRes, startPixel, endPixel)
-                              
-                meanOfPixels = sum(medFiltRes) / len(medFiltRes)
-                
-                # print("a: %f\tb: %f" % (a, b))
-                
-                for x in range(startPixel, endPixel, 1):
-                  
-                  if useLin == True:
-                    linVal1 = a * (x + 0) + b
-                    linVal2 = a * (x + 1) + b
-                    
-                    linVal0 = a * (x - 1) + b
-                    linVal3 = a * (x + 2) + b
-                  else:
-                    linVal1 = b * math.exp(a * (x + 0))
-                    linVal2 = b * math.exp(a * (x + 1))
-                                           
-                    linVal0 = b * math.exp(a * (x - 1))
-                    linVal3 = b * math.exp(a * (x + 2))
-                  
-                  bin1valDiff = linVal1 - hist.GetBinContent(x+0)
-                  bin2valDiff = linVal2 - hist.GetBinContent(x+1)
-                  # WE ONLY WANT A SET OF TWO COLUMNS SO ADJACENT COLUMNS HAVE TO BE NORMAL
-                  bin0valDiff = linVal0 - hist.GetBinContent(x-1) 
-                  bin3valDiff = linVal3 - hist.GetBinContent(x+2) 
-                  
-                  # print(linVal1, linVal2, linVal1 + linVal2, (linVal1 + linVal2) * 0.5)
-                  currentDoubleBinThreshold = math.sqrt((linVal1 + linVal2) * 0.5) * 8
-                  
-                  # if bin1valDiff > self.thresholdDic[layer] and bin2valDiff > self.thresholdDic[layer] and not bin3valDiff > self.thresholdDic[layer]:
-                  if bin1valDiff > currentDoubleBinThreshold  and bin2valDiff > currentDoubleBinThreshold and not bin3valDiff > currentDoubleBinThreshold and not bin0valDiff > currentDoubleBinThreshold:
-
-                    doubleColInRoc = ((x) % (self.rocMaxCol)) // 2 + 1
-                    doubleDeadCols = doubleDeadCols + 1
-                    
-                    outputFile.write("%s,\tX: %d-%d\tROC COLUMN: %d\tDOUBLE COL IN ROC: %d\tTH: %f\tLINVAL: %f\tBINVAL: %f\n" % (hist.GetName(), x+0, x+1, rocCol, doubleColInRoc, currentDoubleBinThreshold, linVal1, hist.GetBinContent(x+0)))
-
-                  # HANDLE NOISY PIXELS
-                  if hist.GetBinContent(x) > 1.2 * linVal1:
-                    colInRoc = (x) % (self.rocMaxCol) + 1
-                    
-                    noisyCols = noisyCols + 1
-                    
-                    noiseFile.write("%s,\tX: %d\tROC COLUMN: %d\tCOL IN ROC: %d\tMEAN IN ROC: %f\tVAL: %f\tLINVAL: %f\n" % (hist.GetName(), x, rocCol, colInRoc, meanOfPixels, hist.GetBinContent(x), linVal1))
-                
+                doubleDeadCols = doubleDeadCols + result[0]
+                noisyCols = noisyCols + result[1]                
                   
           outputFile.write("\n")    
           noiseFile.write("\n")
+          
     print("Number of inefficient double columns: %d"%(doubleDeadCols))
     print("Number of noisy cols: %d"%(noisyCols))
       
