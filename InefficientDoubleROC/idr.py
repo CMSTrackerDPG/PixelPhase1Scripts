@@ -64,7 +64,7 @@ class InefficientDeadROCs:
     
     self.barrelNoisyColumnTh = 1.35
     self.barrelNoisyColumnTh2 = 4.5
-    self.endcapNoisyColumnTh = 1.3#1.5
+    self.endcapNoisyColumnTh = 1.5
     
     self.barrelInefficientDColTh = 8#2.5
     self.endcapInefficientDColTh = 30#8
@@ -159,10 +159,10 @@ class InefficientDeadROCs:
     
     medFiltRes, sciPyMedFiltRes = deepcopy(pixelArr), deepcopy(pixelArr)
     for i in range(repeatFilter):
-      # sciPyMedFiltRes = signal.medfilt(sciPyMedFiltRes, filterKernelSize) # 5 is obligatory to filter doublets!!!
+      sciPyMedFiltRes = signal.medfilt(sciPyMedFiltRes, filterKernelSize) # 5 is obligatory to filter doublets!!!
       medFiltRes = self.__customMedianFilter(medFiltRes, filterKernelSize // 2)
       
-    return pixelArr, medFiltRes, columnsWithSuspiciouslyNoisyPixels
+    return pixelArr, medFiltRes, columnsWithSuspiciouslyNoisyPixels, sciPyMedFiltRes
     
   def __getPixelArrWithRemovedDrops(self, pixelArr, medFiltRes):
     return [ (pixelArr[i] if pixelArr[i] > medFiltRes[i] else medFiltRes[i]) if 0 < i < len(pixelArr) - 1 else min(medFiltRes) for i in range(len(pixelArr))]
@@ -397,7 +397,7 @@ class InefficientDeadROCs:
                 
                 rocCol = rocNum + 1
                 
-                pixelArr, medFiltRes, columnsWithSuspiciouslyNoisyPixels = self.__getROCData(hist, startPixel, endPixel, row, 3, 5)
+                pixelArr, medFiltRes, columnsWithSuspiciouslyNoisyPixels, sciPyMedFiltRes = self.__getROCData(hist, startPixel, endPixel, row, 3, 5)
                 
                 if pixelArr == None:
                   continue
@@ -405,10 +405,11 @@ class InefficientDeadROCs:
                 # meanOfPixels = sum(pixelArr) / len(pixelArr)
                 # pixelArrSorted = deepcopy(pixelArr)
                 # pixelArrSorted.sort()
-                # outputFile.write("%s: <x> <med_min> VS. <sci_med_min> | x_min:\t%f %f %f | %f, %f, %f, %f\n" % (hist.GetName(), meanOfPixels, min(medFiltRes), min(sciPyMedFiltRes), pixelArrSorted[0], pixelArrSorted[1], pixelArrSorted[2], pixelArrSorted[3]))
+                # outputFile.write("%s: <x> <med_min> VS. <med_max> | x_min:\t%f %f %f | %f, %f, %f, %f\n" % (hist.GetName(), meanOfPixels, min(medFiltRes), max(medFiltRes), pixelArrSorted[0], pixelArrSorted[1], pixelArrSorted[2], pixelArrSorted[3]))
                 
                 if "F" not in layer:
-                  pixelArrWithoutDrops = self.__getPixelArrWithRemovedDrops(pixelArr, medFiltRes)
+                  # pixelArrWithoutDrops = self.__getPixelArrWithRemovedDrops(pixelArr, medFiltRes)
+                  pixelArrWithoutDrops = self.__getPixelArrWithRemovedDrops(pixelArr, sciPyMedFiltRes)
                   pixelArrWithoutDropsNormalized = self.__normalizeArray(pixelArrWithoutDrops)
                   # tmp_mean = sum(pixelArrWithoutDropsNormalized) / len(pixelArrWithoutDropsNormalized)
                   # pixelArrWithoutDropsNormalized = self.__setNormalizedArrayZeroInThePoint(pixelArrWithoutDropsNormalized, tmp_mean)
