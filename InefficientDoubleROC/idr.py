@@ -182,7 +182,7 @@ class InefficientDeadROCs:
   def __determineBarrelNoise(self, noiseFile, columnsWithSuspiciouslyNoisyPixels, histName, meanOfPixels, maxMed, val, pos, rocCol, rocRow):
     noisyROC = False;
     if meanOfPixels < self.rocOccupancyTh:
-      print("Very low mean occupancy: %f in %s in (col, row) (%d, %d)...\tSkipping noisy ROC calculation" % (meanOfPixels, histName, rocCol, rocRow) )
+      #print("Very low mean occupancy: %f in %s in (col, row) (%d, %d)...\tSkipping noisy ROC calculation" % (meanOfPixels, histName, rocCol, rocRow) )
       noisyROC = True
     else:
       th = self.barrelNoisyColumnTh * maxMed
@@ -192,15 +192,15 @@ class InefficientDeadROCs:
           noiseFile.write("%s\t(x, row)->[rocNum, xRoc]\t(%d, %d)->[%d, %d];\t{VAL, TH}\t{%f, %f}\n" % (histName, pos, rocRow+1, rocNum, xCoordInROC, val, th))
           
           return 1, noisyROC
-        else:
-          print("WARNING: rejecting %s (x, row) (%d, %d) as being affected by a few noisy pixel(s)" % (histName, pos, rocRow+1))
+        # else:
+          # print("WARNING: rejecting %s (x, row) (%d, %d) as being affected by a few noisy pixel(s)" % (histName, pos, rocRow+1))
           
     return 0, noisyROC
     
   def __determineBarrelNoise2(self, noiseFile, columnsWithSuspiciouslyNoisyPixels, histName, meanOfPixels, normMeanOfPixels, normVal, pos, rocCol, rocRow):
     noisyROC = False;
     if meanOfPixels < self.rocOccupancyTh:
-      print("Very low mean occupancy: %f in %s in (col, row) (%d, %d)...\tSkipping noisy ROC calculation" % (meanOfPixels, histName, rocCol, rocRow) )
+      #print("Very low mean occupancy: %f in %s in (col, row) (%d, %d)...\tSkipping noisy ROC calculation" % (meanOfPixels, histName, rocCol, rocRow) )
       noisyROC = True
     else:
       th = self.barrelNoisyColumnTh2 * normMeanOfPixels
@@ -210,15 +210,15 @@ class InefficientDeadROCs:
           noiseFile.write("%s\t(x, row)->[rocNum, xRoc]\t(%d, %d)->[%d, %d];\t{NORMVAL, TH}\t{%f, %f}\n" % (histName, pos, rocRow+1, rocNum, xCoordInROC, normVal, th))
           
           return 1, noisyROC
-        else:
-          print("WARNING: rejecting %s (x, row) (%d, %d) as being affected by a few noisy pixel(s)" % (histName, pos, rocRow+1))
+        # else:
+          # print("WARNING: rejecting %s (x, row) (%d, %d) as being affected by a few noisy pixel(s)" % (histName, pos, rocRow+1))
           
     return 0, noisyROC
         
   def __determineEndcapNoise(self, noiseFile, columnsWithSuspiciouslyNoisyPixels, histName, meanOfPixels, linVal, val, pos, rocCol, rocRow):
     noisyROC = False;
     if meanOfPixels < self.rocOccupancyTh:
-      print("Very low mean occupancy: %f in %s in (col, row) (%d, %d)...\tSkipping noisy ROC calculation" % (meanOfPixels, histName, rocCol, rocRow) )
+      # print("Very low mean occupancy: %f in %s in (col, row) (%d, %d)...\tSkipping noisy ROC calculation" % (meanOfPixels, histName, rocCol, rocRow) )
       noisyROC = True
     
     else:
@@ -229,8 +229,8 @@ class InefficientDeadROCs:
           noiseFile.write("%s\t(x, row)->[rocNum, xRoc]\t(%d, %d)->[%d, %d];\t{VAL, TH}\t{%f, %f}\n" % (histName, pos, rocRow+1, rocNum, xCoordInROC, val, th))
           
           return 1, noisyROC
-        else:
-          print("WARNING: rejecting %s (x, row) (%d, %d) as being affected by a few noisy pixel(s)" % (histName, pos, rocRow+1))
+        # else:
+          # print("WARNING: rejecting %s (x, row) (%d, %d) as being affected by a few noisy pixel(s)" % (histName, pos, rocRow+1))
           
     return 0, noisyROC
     
@@ -379,13 +379,14 @@ class InefficientDeadROCs:
     return doubleDeadCols, noisyColsNum
       
   def ReadHistograms(self):      
-    doubleDeadCols = 0
-    noisyColsNum = 0
+    doubleDeadCols, noisyColsNum = 0, 0
     
     with open(self.noiseOutputFileName, "w") as noiseFile:   
       with open(self.outputFileName, "w") as outputFile: 
         for layer in self.dicOfModuleHistograms:
           
+          doubleDeadColsInLayer, noisyColsNumInLayer = 0, 0
+             
           outputFile.write("-> " + layer + "\n\n")
           noiseFile.write("-> " + layer + "\n\n")
           
@@ -419,11 +420,11 @@ class InefficientDeadROCs:
                 else:
                   result = self.__determineEndcapDColInefficiencyAndNoise(medFiltRes, hist.GetName(), pixelArr, startPixel, rocCol, row, outputFile, columnsWithSuspiciouslyNoisyPixels, noiseFile)
                   
-                doubleDeadCols = doubleDeadCols + result[0]
-                noisyColsNum = noisyColsNum + result[1]                
+                doubleDeadCols, doubleDeadColsInLayer = doubleDeadCols + result[0], doubleDeadColsInLayer + result[0]
+                noisyColsNum, noisyColsNumInLayer = noisyColsNum + result[1], noisyColsNumInLayer + result[1]               
                   
-          outputFile.write("\n")    
-          noiseFile.write("\n")
+          outputFile.write("\n\tTOTAL IN LAYER/DISK: %d\n\n" % (doubleDeadColsInLayer))    
+          noiseFile.write("\n\tTOTAL IN LAYER/DISK: %d\n\n" % (noisyColsNumInLayer))
           
     print("Number of inefficient double columns: %d"%(doubleDeadCols))
     print("Number of noisy cols: %d"%(noisyColsNum))
@@ -434,7 +435,7 @@ for i in range(1, len(sys.argv), 1):
   if i == 1:
     inputFileName = sys.argv[i]
 
-runNum = ((inputFileName.split("."))[0].split("_R000"))[1]
+runNum = ((inputFileName.split("/")[-1].split("."))[0].split("_R000"))[1]
 print("Run number: %s"%(runNum))
 baseRootDir = ["DQMData/Run " + runNum + "/PixelPhase1/Run summary/Phase1_MechanicalView"]
 print(baseRootDir[0])
