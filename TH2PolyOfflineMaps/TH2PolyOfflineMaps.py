@@ -49,10 +49,10 @@ class TH2PolyOfflineMaps:
   
     for obj in dir.GetListOfKeys():
       if not obj.IsFolder():
-        if obj.ReadObjectAny(TClass.GetClass("TH2")):
+        if obj.ReadObjectAny(TClass.GetClass("TProfile2D")):
           th2 = deepcopy(obj.ReadObj())
           name = th2.GetName()
-          if 6 < th2.GetNbinsX() < 10 and name.find("per") != -1 and name.find("Lumisection") == -1: #take only module lvl plots
+          if name.find("per") != -1 and name.find("Lumisection") == -1 and (6 < th2.GetNbinsX() < 10 or 48 < th2.GetNbinsX() < 80): #take module or ROC lvl plots
             print(''.join([dir.GetPath(), '/', name]))
             
             # fix when there are plots starting with the same strings in different directories
@@ -160,6 +160,10 @@ class TH2PolyOfflineMaps:
         currentGroupName = objNameCollected
       groupOfHists.append(obj)
     self.groupedHistograms.append(groupOfHists) #the last group
+    
+    for item in self.groupedHistograms:
+      print(item)
+
     
   def __AddNamedBins(self, geoFile, tX, tY, sX, sY, applyModuleRotation = False):
 
@@ -318,13 +322,15 @@ class TH2PolyOfflineMaps:
         if len(group) == 0:
           return
         print(group[0].GetName())
-        name = ''.join(group[0].GetName().split("_per_")[0])
+        name = ''.join(group[0].GetName().split("_per_")[0]) + ("_from_ROC" if group[0].GetName().find("Coord") != -1 else "")
         self.availableNames.append(name)
-        # print(name)
+        print("\t" + name)
+        
         for obj in group:
           nbinsX = obj.GetNbinsX()
           nbinsY = obj.GetNbinsY()
           
+          # MODULE LVL PLOTS FIRST
           if nbinsX == 9: # BARREL
             maxX = nbinsX // 2
             maxY = nbinsY // 2
@@ -351,6 +357,78 @@ class TH2PolyOfflineMaps:
                 for panel in range(1, 3):
                   onlineName = self.__BuildOnlineDiskName(x, y, panel, self.maxBladeToRing[maxY])
                   self.internalData[self.detDict[onlineName]].update({name : obj.GetBinContent(x + maxX + 1, (y + maxY) * 2 + panel)})  
+                  
+          elif nbinsX == 72: # BARREL
+            maxX = nbinsX // 16
+            maxY = nbinsY // 4
+            
+            for x in range(-maxX, maxX + 1):
+              if x == 0:
+                continue
+              for y in range(-maxY, maxY + 1):
+                if y == 0:
+                  continue
+                onlineName = self.__BuildOnlineBarrelName(x, y, self.maxLadderToLayer[maxY])
+                
+                entriesSum = 0.0
+                weightedContent = 0.0
+                
+                for w in range((x + maxX) * 8 + 1, (x + 1 + maxX) * 8 + 1):
+                  for h in range((y + maxY) * 2 + 1, (y + 1 + maxY) * 2 + 1):
+                    
+                    internalBinID = obj.GetBin(w, h)
+                    content = obj.GetBinContent(internalBinID)
+                    entries = obj.GetBinEntries(internalBinID)
+                    
+                    #if ("adc" in name):
+                    #  print("%d x %d -> c = %f, e = %f" % (w, h, content, entries))
+                    
+                    entriesSum += entries
+                    weightedContent += content * entries
+                    
+                avg = weightedContent / entriesSum if entriesSum != 0.0 else 0.0
+                
+                #if ("adc" in name):
+                #  print ("\tweighted content: %f; entriesSum: %f; avg: %f" % (weightedContent, entriesSum, avg))
+                
+                self.internalData[self.detDict[onlineName]].update({name : avg})
+                   
+          
+          elif nbinsX == 56: # FORWARD
+            maxX = nbinsX // 16
+            maxY = nbinsY // 8
+            
+            for x in range(-maxX, maxX + 1):
+              if x == 0:
+                continue
+              for y in range(-maxY, maxY + 1):
+                if y == 0:
+                  continue
+                for panel in range(1, 3):
+                  onlineName = self.__BuildOnlineDiskName(x, y, panel, self.maxBladeToRing[maxY])
+                  
+                  entriesSum = 0.0
+                  weightedContent = 0.0
+                  
+                  for w in range((x + maxX) * 8 + 1, (x + 1 + maxX) * 8 + 1):
+                    for h in range(((y + maxY) * 2 + panel) * 2 - 1, ((y + maxY) * 2 + panel + 1) * 2 - 1):
+                      internalBinID = obj.GetBin(w, h)
+                      content = obj.GetBinContent(internalBinID)
+                      entries = obj.GetBinEntries(internalBinID)
+                      
+                      if ("adc" in name):
+                        print("%d x %d -> c = %f, e = %f" % (w, h, content, entries))
+                      
+                      entriesSum += entries
+                      weightedContent += content * entries
+                      
+                  avg = weightedContent / entriesSum if entriesSum != 0.0 else 0.0
+                  
+                  if ("adc" in name):
+                    print ("\tweighted content: %f; entriesSum: %f; avg: %f" % (weightedContent, entriesSum, avg))
+                
+                  self.internalData[self.detDict[onlineName]].update({name : avg})
+          
           else:
             print("Unrecognized plot")
       else:
@@ -375,7 +453,8 @@ class TH2PolyOfflineMaps:
     gStyle.SetPalette(1)
     for key in self.internalData:
       monitoredValues = self.internalData[key].keys()
-      # print(monitoredValues)
+      print("MONITORED VALUES:\n")
+      print(monitoredValues)
       break
     
     if os.path.exists(self.outputDirName) == False: # check whether directory exists
@@ -401,6 +480,11 @@ class TH2PolyOfflineMaps:
         listOfVals = []
         onlineName = ""
         for detId in self.internalData:
+          # print(self.internalData[detId])
+          
+          if (mv not in self.internalData[detId]):
+            continue 
+          
           val = (self.internalData[detId])[mv]
           onlineName = self.rawToOnlineDict[detId]
           listOfVals.append([val, detId, onlineName])
@@ -440,11 +524,11 @@ class TH2PolyOfflineMaps:
         phiArrow = TArrow(0.0, 27.0, 30.0, 27.0, 0.02, "|>")
         phiArrow.SetLineWidth(4)
         phiArrow.Draw()
-        ### x arror
+        ### x arrow
         xArrow = TArrow(25.0, 44.5, 50.0, 44.5, 0.02, "|>")
         xArrow.SetLineWidth(4)
         xArrow.Draw()
-        ### y arror
+        ### y arrow
         yArrow = TArrow(25.0, 44.5, 25.0, 69.5, 0.02, "|>")
         yArrow.SetLineWidth(4)
         yArrow.Draw()
