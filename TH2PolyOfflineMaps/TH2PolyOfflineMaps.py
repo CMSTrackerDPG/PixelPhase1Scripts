@@ -317,12 +317,30 @@ class TH2PolyOfflineMaps:
   
   def ReadHistograms(self):
     if self.inputFile.IsOpen():
+    
+      # ARE THERE HISTOGRAMS RESULTING IN EXACTLY THE SAME OUTPUT (MODULE + ROC LVL)?
+      # -> ELIMINATE DUPLICATES PROMOTING MODULE LVL PLOTS
+      groupNames = { k : ''.join(self.groupedHistograms[k][0].GetName().split("_per_")[0]) + ("_ROC" if self.groupedHistograms[k][0].GetName().find("Coord") != -1 else "") for k in range(len(self.groupedHistograms))}
+          
+      for k in groupNames:
+        currName = groupNames[k]
+        for l in range(len(groupNames)):
+        
+          if k == l:
+            continue      
+          tmpName = groupNames[l]
+         
+          if tmpName == currName + "_ROC":
+            self.groupedHistograms[l] = []
+    
       for group in self.groupedHistograms:
         # name = ''.join(group[0].GetName().split("_")[0:-1])
         if len(group) == 0:
-          return
+          continue
         print(group[0].GetName())
-        name = ''.join(group[0].GetName().split("_per_")[0]) + ("_from_ROC" if group[0].GetName().find("Coord") != -1 else "")
+
+        name = ''.join(group[0].GetName().split("_per_")[0])# + ("_from_ROC" if group[0].GetName().find("Coord") != -1 else "")
+        
         self.availableNames.append(name)
         print("\t" + name)
         
@@ -357,7 +375,8 @@ class TH2PolyOfflineMaps:
                 for panel in range(1, 3):
                   onlineName = self.__BuildOnlineDiskName(x, y, panel, self.maxBladeToRing[maxY])
                   self.internalData[self.detDict[onlineName]].update({name : obj.GetBinContent(x + maxX + 1, (y + maxY) * 2 + panel)})  
-                  
+               
+          # ROC LVL PLOTS NOW               
           elif nbinsX == 72: # BARREL
             maxX = nbinsX // 16
             maxY = nbinsY // 4
@@ -416,16 +435,16 @@ class TH2PolyOfflineMaps:
                       content = obj.GetBinContent(internalBinID)
                       entries = obj.GetBinEntries(internalBinID)
                       
-                      if ("adc" in name):
-                        print("%d x %d -> c = %f, e = %f" % (w, h, content, entries))
+                      # if ("adc" in name):
+                        # print("%d x %d -> c = %f, e = %f" % (w, h, content, entries))
                       
                       entriesSum += entries
                       weightedContent += content * entries
                       
                   avg = weightedContent / entriesSum if entriesSum != 0.0 else 0.0
                   
-                  if ("adc" in name):
-                    print ("\tweighted content: %f; entriesSum: %f; avg: %f" % (weightedContent, entriesSum, avg))
+                  # if ("adc" in name):
+                    # print ("\tweighted content: %f; entriesSum: %f; avg: %f" % (weightedContent, entriesSum, avg))
                 
                   self.internalData[self.detDict[onlineName]].update({name : avg})
           
