@@ -38,6 +38,7 @@ class NoisyROCsReader:
             # print(''.join([dir.GetPath(), '/', name]))
             
             histogramPath = '/'.join(["PixelPhase1", '/'.join(dir.GetPath().split("/")[5:]), name])
+            histogramPath = histogramPath.replace("+", "%2B")
             # print(histogramPath)
             
             newName = name.split(self.lookForStr)[1]
@@ -76,6 +77,56 @@ class NoisyROCsReader:
           
     return accum
     
+  def __DetermineCluster(self, hist, value):
+    binNumX = hist.FindLastBinAbove(value - 1, 1)
+    binNumY = hist.FindLastBinAbove(value - 1, 2)
+    
+    crawlPattern = [ [-1, 1],  [0, 1],  [1, 1],
+                     [-1, 0],  [0, 0],  [1, 0],
+                     [-1, -1], [0, -1], [1, -1]]
+    
+    pixelsInNoiseCluster = 0
+    for i in range(len(crawlPattern)):
+      if i == 4:
+        continue
+      
+      val = hist.GetBinContent(binNumX + crawlPattern[i][0],
+                               binNumY + crawlPattern[i][1])
+                               
+      if val >= self.ROCThreshold:
+        pixelsInNoiseCluster = pixelsInNoiseCluster + 1
+    
+    return True if pixelsInNoiseCluster >= self.pixelsInClusterThreshold else False
+    
+  def __DetermineScatteredCluster(self, hist, value):
+    binNumX = hist.FindLastBinAbove(value - 1, 1)
+    binNumY = hist.FindLastBinAbove(value - 1, 2)
+    
+    area = (2.0 * self.scatteredClusterRadius + 1) * (2.0 * self.scatteredClusterRadius + 1) - 1
+    
+    pixelsInNoiseCluster = 0
+    for i in range(-self.scatteredClusterRadius, self.scatteredClusterRadius + 1, 1):
+      for j in range(-self.scatteredClusterRadius, self.scatteredClusterRadius + 1, 1):
+        
+        if i == j and i == 0:
+          continue
+      
+        currX = binNumX + i
+        currY = binNumY + j
+        
+        if currX < 1 or currX > self.rocMaxCol * self.rocsInRow or currY < 1 or currY > self.rocMaxRow * self.rocsInCol:
+          area = area - 1
+          continue
+          
+        val = hist.GetBinContent(currX, currY)
+        
+        if val >= self.scatteredClusterThreshold:
+          pixelsInNoiseCluster = pixelsInNoiseCluster + 1
+      
+    fraction = pixelsInNoiseCluster / area
+    
+    return True if fraction >= self.scatteredClusterFractionThreshold else False
+    
   def __BuildLink(self, histPath):  
     pos = histPath.rfind("/")
     
@@ -110,17 +161,31 @@ class NoisyROCsReader:
              
   ############################################################################
   
-  def __init__(self, runNum, inputDQMName, outputDir, outputFileName, dirs):
+  def __init__(self, runNum, inputDQMName, outputDir, dirs):
   
-    self.runNum = runNum
-    self.inputFileName = inputDQMName
-    self.outputDir = outputDir
-    self.outputFileName = self.outputDir + "/" + outputFileName
-    self.dirs = dirs
+    self.runNum                         = runNum
+    self.inputFileName                  = inputDQMName
+    self.outputDir                      = outputDir
     
-    self.lookForStr = "digi_occupancy_per_col_per_row_"
-    self.ROCThreshold = 1000
-    self.plotThreshold = plotThreshold
+    self.outputFileNames = [self.outputDir + "/" + str(runNum) + "/noisyCosmic_report.html",
+                            self.outputDir + "/" + str(runNum) + "/noisyCosmic_Clustered_report.html",
+                            self.outputDir + "/" + str(runNum) + "/noisyCosmic_ScatteredCluster_report.html"]
+    
+    # self.outputFileName                 = self.outputDir + "/noisyCosmic_" + str(runNum) + "_report.html"
+    # self.outputFileNameClustered        = self.outputDir + "/noisyCosmic_" + str(runNum) + "_Clustered_report.html"
+    # self.outputFileNameScatteredCluster = self.outputDir + "/noisyCosmic_" + str(runNum) + "_ScatteredCluster_report.html"
+    self.dirs                           = dirs
+    
+    self.lookForStr   = "digi_occupancy_per_col_per_row_"
+    self.ROCThreshold = plotThreshold
+    
+    self.plotThreshold            = plotThreshold
+    self.pixelsInClusterThreshold = pixelsInClusterThreshold
+    
+    self.scatteredClusterRadius             = scatteredClusterRadius
+    self.scatteredClusterThreshold          = scatteredClusterThreshold
+    self.scatteredClusterFractionThreshold  = scatteredClusterFractionThreshold
+    
     self.rocMaxCol = 52
     self.rocMaxRow = 80
     self.rocsInRow = 8
@@ -143,68 +208,56 @@ class NoisyROCsReader:
       
   def AnalyzeHistograms(self):
   
+    # OUT DIRECTORY
     if not os.path.exists(self.outputDir):
       os.system("mkdir " + self.outputDir)
-    
-    with open(self.outputFileName, "w") as outputFile:
       
-      outputFile.write("<html><head></head><body>")
-      outputFile.write("<span style=\"font-size: large; font-weight: bold;\"> Noisy cosmic ROCs for the run: " + str(self.runNum) + "</br></span>")
-      for layer in self.dicOfModuleHistograms:
-        outputFile.write("</br> -> " + layer + "</br>")
-        outputFile.write("<table style=\"width: 700px;\">")
-        
-        # currentDir = self.outputDir + "/" + layer
-        # if not os.path.exists(currentDir):
-          # os.system("mkdir " + currentDir)
-        
-        for histObj in self.dicOfModuleHistograms[layer]:
-          hist = histObj[0]
-          histPath = histObj[1]
+    # RUN SPECIFIC OUT DIRECTORY
+    if not os.path.exists(self.outputDir + "/" + str(self.runNum)):
+      os.system("mkdir " + self.outputDir + "/" + str(self.runNum))
+    
+    with open(self.outputFileNames[0], "w") as outputFile:
+      with open(self.outputFileNames[1], "w") as outputFileClustered:
+        with open(self.outputFileNames[2], "w") as outputFileScatteredCluster:
+      
+          files = [outputFile, outputFileClustered, outputFileScatteredCluster]
           
-          maxVal = hist.GetMaximum()
-          if maxVal >= self.plotThreshold:
-            linkPath = self.__BuildLink(histPath)
+          for f in files:
+            f.write("<html><head></head><body>")
+            f.write("<span style=\"font-size: large; font-weight: bold;\"> Noisy cosmic ROCs for the run: " + str(self.runNum) + "</br></span>")
+      
+      
+          for layer in self.dicOfModuleHistograms:
+            for f in files:
+              f.write("</br> -> " + layer + "</br>")
+              f.write("<table style=\"width: 700px;\">")
             
-            outputFile.write("<tr><td style=\"width: 500px;\">" + hist.GetName() + "</td><td style=\"width: 200px;\"><a href=\"" + linkPath + "\"> See plot</a></td></tr>")
-            
-        outputFile.write("</table>")
-            
-      outputFile.write("</body></html>")
-            
-          # for rx in range(self.rocsInRow):
-            # for ry in range(self.rocsInCol):
-              # xStart = rx * self.rocMaxCol
-              # yStart = ry * self.rocMaxRow
+            for histObj in self.dicOfModuleHistograms[layer]:
+              hist = histObj[0]
+              histPath = histObj[1]
               
-              # ROCOccupancy = self.__AnalyzeROC(xStart, yStart, hist)
-              # if ROCOccupancy >= self.ROCThreshold:
-                # realXROC, realYROC = rx, ry
-                
-                # rocNum = 0
-                
-                # theName = hist.GetName()
-                # if theName.find("BPix_Bp") != -1: #zero ROC is in top left corner
-                  # realYROC = 1 - realYROC
-                  # if realYROC == 1:
-                    # rocNum = 15 - realXROC                    
-                  # else:
-                    # rocNum = realXROC
-                # else: # zero ROC is in bottom right corner
-                  # realXROC = 7 - realXROC
-                  # if realYROC == 1:
-                    # rocNum = 15 - realXROC
-                  # else:
-                    # rocNum = realXROC
-                    
-                # c = TCanvas(theName, theName, canvasWidth, canvasHeight)
-                # hist.Draw("COLZ")
-                # hist.SetStats(0)
-                # c.Print(currentDir + "/" + theName + ".png")
-                
-                    
-                # # print("%s roc=%d, rx=%d ry=%d" % (hist.GetName(), rocNum, rx, ry))
-                # outputFile.write("%s roc=%d\n" % (hist.GetName(), rocNum))
+              maxVal = hist.GetMaximum()
+              
+              # SINGLE PIXEL CODE
+              if maxVal >= self.plotThreshold:
+                linkPath = self.__BuildLink(histPath)
+                files[0].write("<tr><td style=\"width: 500px;\">" + hist.GetName() + "</td><td style=\"width: 200px;\"><a href=\"" + linkPath + "\"> See plot</a></td></tr>")
+              
+              # CLUSTER FIND CODE
+              if self.__DetermineCluster(hist, maxVal) == True:
+                linkPath = self.__BuildLink(histPath)
+                files[1].write("<tr><td style=\"width: 500px;\">" + hist.GetName() + "</td><td style=\"width: 200px;\"><a href=\"" + linkPath + "\"> See plot</a></td></tr>")
+              
+              # SCATTERED CLUSTER FIND CODE
+              if self.__DetermineScatteredCluster(hist, maxVal) == True:
+                linkPath = self.__BuildLink(histPath)
+                files[2].write("<tr><td style=\"width: 500px;\">" + hist.GetName() + "</td><td style=\"width: 200px;\"><a href=\"" + linkPath + "\"> See plot</a></td></tr>")
+              
+            for f in files: 
+              f.write("</table>")
+          
+          for f in files:          
+            f.write("</body></html>")
               
   
 ###################################################################
@@ -215,8 +268,8 @@ for i in range(1, len(sys.argv)):
 
 runNumberStr = str(runNumber)
 
-runStrHigh = "000" + runNumberStr[0:2] + "x" * 4
-runStrMedium = "000" + runNumberStr[0:4] + "x" * 2
+runStrHigh    = "000" + runNumberStr[0:2] + "x" * 4
+runStrMedium  = "000" + runNumberStr[0:4] + "x" * 2
 
 wholePathToTheRemoteFile = httpsMainDir + runStrHigh + "/" + runStrMedium + "/DQM_V0001_PixelPhase1_R000" + runNumberStr + ".root"
 
@@ -233,8 +286,13 @@ else:
   
 baseRootDir = ["DQMData/Run " + runNumberStr + "/PixelPhase1/Run summary/Phase1_MechanicalView"]
 print(baseRootDir[0])
-outputFileName = "noisyCosmic_" + runNumberStr + "_report.html"
 
-readerObj = NoisyROCsReader(runNumber, tmpFileName, outputDir, outputFileName, baseRootDir)
+readerObj = NoisyROCsReader(runNumber, tmpFileName, outputDir, baseRootDir)
 readerObj.AnalyzeHistograms()
+
+print("*** Job done - removing temporary files ***")
+os.system("rm " + tmpFileName)
+
+print("Your reports are available in:")
+print(outputDir + "/" + runNumberStr + "/")
   
