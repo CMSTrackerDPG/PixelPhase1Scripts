@@ -87,13 +87,12 @@ class NoisyROCsReader:
     
     pixelsInNoiseCluster = 0
     for i in range(len(crawlPattern)):
-      if i == 4:
-        continue
-      
+
       val = hist.GetBinContent(binNumX + crawlPattern[i][0],
                                binNumY + crawlPattern[i][1])
-                               
-      if val >= self.ROCThreshold:
+      #print binNumX + crawlPattern[i][0]
+      #print binNumY + crawlPattern[i][1]                        
+      if (pixelsInNoiseCluster==0 and  val >= clusterThreshold) or (pixelsInNoiseCluster!=0 and  val >= 0.6*clusterThreshold): 
         pixelsInNoiseCluster = pixelsInNoiseCluster + 1
     
     return True if pixelsInNoiseCluster >= self.pixelsInClusterThreshold else False
@@ -102,14 +101,14 @@ class NoisyROCsReader:
     binNumX = hist.FindLastBinAbove(value - 1, 1)
     binNumY = hist.FindLastBinAbove(value - 1, 2)
     
-    area = (2.0 * self.scatteredClusterRadius + 1) * (2.0 * self.scatteredClusterRadius + 1) - 1
+    area = (2.0 * self.scatteredClusterRadius + 1) * (2.0 * self.scatteredClusterRadius + 1) #- 1 # -1 is to exclude the central bin
     
-    pixelsInNoiseCluster = 0
+    pixelsInNoiseCluster = 1
     for i in range(-self.scatteredClusterRadius, self.scatteredClusterRadius + 1, 1):
       for j in range(-self.scatteredClusterRadius, self.scatteredClusterRadius + 1, 1):
         
-        if i == j and i == 0:
-          continue
+       # if i == j and i == 0: 
+       #   continue
       
         currX = binNumX + i
         currY = binNumY + j
@@ -120,12 +119,12 @@ class NoisyROCsReader:
           
         val = hist.GetBinContent(currX, currY)
         
-        if val >= self.scatteredClusterThreshold:
+        if val >= scatteredClusterThreshold:
           pixelsInNoiseCluster = pixelsInNoiseCluster + 1
       
-    fraction = pixelsInNoiseCluster / area
+    fraction = pixelsInNoiseCluster
     
-    return True if fraction >= self.scatteredClusterFractionThreshold else False
+    return True if fraction >= self.scatteredClusterNumberThreshold else False
     
   def __BuildLink(self, histPath):  
     pos = histPath.rfind("/")
@@ -167,24 +166,26 @@ class NoisyROCsReader:
     self.inputFileName                  = inputDQMName
     self.outputDir                      = outputDir
     
-    self.outputFileNames = [self.outputDir + "/" + str(runNum) + "/noisyCosmic_report.html",
-                            self.outputDir + "/" + str(runNum) + "/noisyCosmic_Clustered_report.html",
-                            self.outputDir + "/" + str(runNum) + "/noisyCosmic_ScatteredCluster_report.html"]
+    self.outputFileNames = [self.outputDir + "/" + str(runNum) + "/noisyPixels_report.html",
+                            self.outputDir + "/" + str(runNum) + "/noisyPixels_Clustered_report.html",
+                            self.outputDir + "/" + str(runNum) + "/noisyPixels_Spray_report.html"]
     
     # self.outputFileName                 = self.outputDir + "/noisyCosmic_" + str(runNum) + "_report.html"
     # self.outputFileNameClustered        = self.outputDir + "/noisyCosmic_" + str(runNum) + "_Clustered_report.html"
     # self.outputFileNameScatteredCluster = self.outputDir + "/noisyCosmic_" + str(runNum) + "_ScatteredCluster_report.html"
     self.dirs                           = dirs
     
-    self.lookForStr   = "digi_occupancy_per_col_per_row_"
-    self.ROCThreshold = plotThreshold
+    self.lookForStr   = "digi_occupancy_per_col_per_row_"    
+    self.ROCThreshold = pixelThreshold
     
-    self.plotThreshold            = plotThreshold
+    self.pixelThreshold           = pixelThreshold
+
+    self.clusterThreshold           = clusterThreshold
     self.pixelsInClusterThreshold = pixelsInClusterThreshold
     
     self.scatteredClusterRadius             = scatteredClusterRadius
     self.scatteredClusterThreshold          = scatteredClusterThreshold
-    self.scatteredClusterFractionThreshold  = scatteredClusterFractionThreshold
+    self.scatteredClusterNumberThreshold  = scatteredClusterNumberThreshold
     
     self.rocMaxCol = 52
     self.rocMaxRow = 80
@@ -239,7 +240,7 @@ class NoisyROCsReader:
               maxVal = hist.GetMaximum()
               
               # SINGLE PIXEL CODE
-              if maxVal >= self.plotThreshold:
+              if maxVal >= self.pixelThreshold:
                 linkPath = self.__BuildLink(histPath)
                 files[0].write("<tr><td style=\"width: 500px;\">" + hist.GetName() + "</td><td style=\"width: 200px;\"><a href=\"" + linkPath + "\"> See plot</a></td></tr>")
               

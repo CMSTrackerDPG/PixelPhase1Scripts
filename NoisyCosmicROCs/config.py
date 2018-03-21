@@ -1,16 +1,16 @@
-pathToGlobus = "/afs/cern.ch/user/p/pjurgiel/.globus/copy/"
-userCertInGlobus = "usercert.pem"
-userKeyInGlobus = "userkey_nopass.pem"
+pathToGlobus = "/data/users/cctrkdata/current/auth/proxy/"
+userCertInGlobus = "proxy.cert"
+userKeyInGlobus = "proxy.cert"
 httpsMainDir = "https://cmsweb.cern.ch/dqm/online/data/browse/Original/"
 tmpFileName = "remoteCopy.root"
 
-plotThreshold = 1000
+pixelThreshold = 10000 #threshold on the number of digis per pixel to be considered noisy
 
-pixelsInClusterThreshold = 2
+clusterThreshold = 100 #threshold on the central pixel digis to search for a cluster around it
+pixelsInClusterThreshold = 3 #minimum number of adjuacent pixels above threshold 
 
-scatteredClusterRadius = 10
-scatteredClusterThreshold = 50
-scatteredClusterFractionThreshold = 0.2
-
+scatteredClusterThreshold = 20 #pixel threshold to search for extended noisy regions (spray)
+scatteredClusterRadius = 12 # pixel over threshold are summed up on a square of RadiusXRadius
+scatteredClusterNumberThreshold = 10 #threshold on the fraction of noisy scattered pixels over the total
 
 outputDir = "OUT"

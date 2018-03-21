@@ -3,9 +3,9 @@
 Given the cosmic run number the tool accessess online dqm GUI to grab the right DQM file to the localhost. Then it loops over all module level ```digi_occupancy_per_col_per_row_*``` plots to spot noisy Pixels. If the noisy Pixel is found it is saved in the html report from which one can easilly go to the problematic plot in the Online GUI.
 
 The tool always starts with getting the MAXIMUM of the current plot than it is being processed in 3 modes:
-1. Simple mode: checks whether the maximum plot value is above ```plotThreshold``` if so the module is being reported.
-2. Clustered mode: if  ```pixelsInClusterThreshold``` of immediate neighbours of the maximum bin also exceed ```plotThreshold``` the module appears in report.
-3. Scattered cluster mode: if ```scatteredClusterFractionThreshold``` fraction of neighbours in range ```scatteredClusterRadius``` are above ```scatteredClusterThreshold``` than the module is being reported.
+1. Simple mode: checks whether the maximum plot value is above ```pixelThreshold``` if so the module is being reported. (finds single pixels above threshold)
+2. Clustered mode: if  ```pixelsInClusterThreshold``` of immediate neighbours of the maximum bin also exceed ```clusterThreshold``` the module appears in report. (finds clustered defects in adjacent pixels)
+3. Scattered cluster mode: if ```scatteredClusterNumberThreshold``` pixels in the ```scatteredClusterRadius``` are above ```scatteredClusterThreshold``` than the module is being reported. (finds cattered defects, "spray", in a square region centered on the noisy pixel)
 
 All these 3 modes have their own output html report accessible in ```<outputDir>/<run number>/```
 
